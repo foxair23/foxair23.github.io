@@ -4,7 +4,7 @@
 const PHONE = '(858) 578-1990';
 const PHONE_LINK = 'tel:8585781990';
 const SITE_URL = 'https://www.castlegaragedoors.com';
-const LOGO_PATH = 'images/logo.png';
+const LOGO_PATH = 'logo.png';
 
 function getDepth(filePath) {
   // Count directory depth from root to determine relative path prefix
