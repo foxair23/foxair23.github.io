@@ -13,13 +13,15 @@ const servicePages = require('./pages-services');
 const servicePages2 = require('./pages-services2');
 const locationPages = require('./pages-locations');
 const standalonePages = require('./pages-standalone');
+const blogPages = require('./pages-blog');
 
 const allPages = [
   ...homePages,
   ...servicePages,
   ...servicePages2,
   ...locationPages,
-  ...standalonePages
+  ...standalonePages,
+  ...blogPages
 ];
 
 const ROOT = path.join(__dirname, '..');
