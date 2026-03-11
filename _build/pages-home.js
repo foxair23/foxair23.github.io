@@ -6,7 +6,7 @@ function homepage() {
   const body = `
   <section class="hero page-top">
     <!-- REPLACE WITH REAL PHOTO: Beautiful garage door on a San Diego-style home -->
-    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1600&q=80')"></div>
+    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80')"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content container">
       <div class="hero-badge">${ico.star} VETERAN-OWNED &amp; FAMILY-OPERATED SINCE 1981</div>
