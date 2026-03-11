@@ -81,8 +81,8 @@ function reviewsPage() {
       <div class="stars-big">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
       <p style="margin:var(--space-2) auto;color:var(--color-text-secondary);">Based on 200+ reviews across Google and Yelp</p>
       <div style="margin-top:var(--space-4);display:flex;justify-content:center;gap:var(--space-4);flex-wrap:wrap;">
-        <a href="#" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">See Google Reviews</a>
-        <a href="#" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">See Yelp Reviews</a>
+        <a href="https://maps.app.goo.gl/T9DtTWjanN9Zgyte9" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">See Google Reviews</a>
+        <a href="https://www.yelp.com/biz/castle-garage-doors-escondido" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">See Yelp Reviews</a>
       </div>
     </div>
     <div class="reviews-grid">
@@ -97,8 +97,8 @@ function reviewsPage() {
       <h3>Had a Great Experience?</h3>
       <p style="margin:var(--space-2) auto var(--space-6);color:var(--color-text-secondary);">We&rsquo;d love to hear about it. Leave us a review on Google or Yelp.</p>
       <div style="display:flex;justify-content:center;gap:var(--space-4);flex-wrap:wrap;">
-        <a href="#" class="btn btn-primary btn-sm">Review on Google</a>
-        <a href="#" class="btn btn-secondary btn-sm">Review on Yelp</a>
+        <a href="https://maps.app.goo.gl/T9DtTWjanN9Zgyte9" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Review on Google</a>
+        <a href="https://www.yelp.com/biz/castle-garage-doors-escondido" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">Review on Yelp</a>
       </div>
     </div>
   </div></div>`;

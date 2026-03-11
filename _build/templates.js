@@ -121,9 +121,9 @@ function footer(prefix) {
           <div class="logo"><img src="${prefix}${LOGO_PATH}" alt="Castle Garage Doors And Gates" width="200" height="40"></div>
           <p>Veteran-owned, family-run garage door and gate service company. Proudly serving San Diego to Riverside County since 1981.</p>
           <div class="footer-social">
-            <a href="#" aria-label="Facebook">${ico.facebook}</a>
+            <a href="https://www.facebook.com/castlegaragedoorscorp" target="_blank" rel="noopener" aria-label="Facebook">${ico.facebook}</a>
             <a href="#" aria-label="Instagram">${ico.instagram}</a>
-            <a href="#" aria-label="Yelp">${ico.yelp_icon}</a>
+            <a href="https://www.yelp.com/biz/castle-garage-doors-escondido" target="_blank" rel="noopener" aria-label="Yelp">${ico.yelp_icon}</a>
           </div>
         </div>
         <div>
