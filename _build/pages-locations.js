@@ -1,9 +1,32 @@
 // Location / Service Area pages
 const T = require('./templates');
 
+const nearbyMap = {
+  'San Diego': [{city:'Escondido',file:'escondido.html'},{city:'Carlsbad',file:'carlsbad.html'},{city:'Encinitas',file:'encinitas.html'},{city:'North County SD',file:'north-county.html'}],
+  'Escondido': [{city:'San Diego',file:'san-diego.html'},{city:'North County SD',file:'north-county.html'},{city:'Fallbrook',file:'fallbrook.html'},{city:'Bonsall',file:'bonsall.html'}],
+  'Oceanside': [{city:'Carlsbad',file:'carlsbad.html'},{city:'Encinitas',file:'encinitas.html'},{city:'North County SD',file:'north-county.html'},{city:'Fallbrook',file:'fallbrook.html'}],
+  'Carlsbad': [{city:'Oceanside',file:'oceanside.html'},{city:'Encinitas',file:'encinitas.html'},{city:'San Diego',file:'san-diego.html'},{city:'North County SD',file:'north-county.html'}],
+  'Encinitas': [{city:'Carlsbad',file:'carlsbad.html'},{city:'San Diego',file:'san-diego.html'},{city:'Oceanside',file:'oceanside.html'},{city:'North County SD',file:'north-county.html'}],
+  'North County San Diego': [{city:'Escondido',file:'escondido.html'},{city:'Oceanside',file:'oceanside.html'},{city:'Carlsbad',file:'carlsbad.html'},{city:'Encinitas',file:'encinitas.html'}],
+  'Temecula': [{city:'Murrieta',file:'murrieta.html'},{city:'Fallbrook',file:'fallbrook.html'},{city:'Riverside County',file:'riverside-county.html'},{city:'Corona',file:'corona.html'}],
+  'Murrieta': [{city:'Temecula',file:'temecula.html'},{city:'Fallbrook',file:'fallbrook.html'},{city:'Riverside County',file:'riverside-county.html'},{city:'Corona',file:'corona.html'}],
+  'Fallbrook': [{city:'Bonsall',file:'bonsall.html'},{city:'Temecula',file:'temecula.html'},{city:'Escondido',file:'escondido.html'},{city:'Oceanside',file:'oceanside.html'}],
+  'Bonsall': [{city:'Fallbrook',file:'fallbrook.html'},{city:'Escondido',file:'escondido.html'},{city:'North County SD',file:'north-county.html'},{city:'San Diego',file:'san-diego.html'}],
+  'Riverside County': [{city:'Corona',file:'corona.html'},{city:'Temecula',file:'temecula.html'},{city:'Murrieta',file:'murrieta.html'},{city:'Escondido',file:'escondido.html'}],
+  'Corona': [{city:'Riverside County',file:'riverside-county.html'},{city:'Temecula',file:'temecula.html'},{city:'Murrieta',file:'murrieta.html'},{city:'San Diego',file:'san-diego.html'}]
+};
+
 function locationPage(opts) {
   const prefix = T.getPrefix(opts.file);
   const crumbs = [{label:'Home',href:'index.html'},{label:'Service Areas',href:'service-areas/index.html'},{label:opts.city}];
+  const nearby = nearbyMap[opts.city] || [];
+  const nearbySection = nearby.length ? `
+    <div style="margin-top:var(--space-12);">
+      <h2>Nearby Areas We Serve</h2>
+      <div class="areas-list" style="margin-top:var(--space-4);">
+        ${nearby.map(n => `<a href="${prefix}service-areas/${n.file}">${n.city}</a>`).join('\n        ')}
+      </div>
+    </div>` : '';
   const body = `
   ${T.heroInterior(`Garage Door &amp; Gate Services in ${opts.city}, CA`, opts.subtitle, crumbs, prefix)}
   <div class="section"><div class="container">
@@ -28,6 +51,7 @@ function locationPage(opts) {
       </ul>
     </div>
     ${opts.testimonial ? `<div class="testimonials-grid" style="margin-top:var(--space-12);"><div class="testimonial-card"><div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>&ldquo;${opts.testimonial.quote}&rdquo;</blockquote><div class="testimonial-author">${opts.testimonial.author}</div><div class="testimonial-source">${opts.city}, CA</div></div></div>` : ''}
+    ${nearbySection}
     <div class="areas-map" style="margin-top:var(--space-8);">
       <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d50000!2d${opts.lng}!3d${opts.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus" allowfullscreen="" loading="lazy" title="Castle Garage Doors service area - ${opts.city}" style="width:100%;height:350px;border:0;border-radius:var(--radius-lg);"></iframe>
     </div>
@@ -82,7 +106,7 @@ const locations = [
     testimonial:{quote:'Castle replaced both springs and rollers on our garage door in Scripps Ranch. The technician was on time, professional, and explained everything. Fair pricing and excellent work.',author:'Jennifer M.'}
   }),
   locationPage({ file:'service-areas/escondido.html', city:'Escondido', lat:33.1192, lng:-117.0864, subtitle:'Your neighbor in Escondido — our headquarters is right here.',
-    content:`<p>Castle Garage Doors &amp; Gates is headquartered in Escondido at 1281 Simpson Way, making us your true local garage door company. We&rsquo;re not a franchise dispatching technicians from across the county &mdash; we&rsquo;re right here in your community, and have been since 1981.</p>
+    content:`<p>Castle Garage Doors &amp; Gates is headquartered in Escondido at 1291 Simpson Way Suite D, making us your true local garage door company. We&rsquo;re not a franchise dispatching technicians from across the county &mdash; we&rsquo;re right here in your community, and have been since 1981.</p>
     <p>Escondido&rsquo;s mix of established neighborhoods like Felicita and Westside, the growing developments in East Escondido, and the larger estate properties in the surrounding hills means we see every type of garage door challenge. From aging single-car doors in 1960s tract homes to custom double doors on hillside estates, we handle it all.</p>
     <h3>Escondido Neighborhoods</h3>
     <p>Downtown Escondido, Westside, Felicita, East Valley, Hidden Meadows, Rincon del Diablo, San Pasqual Valley, Daley Ranch area, and all Escondido zip codes (92025, 92026, 92027, 92029).</p>`,

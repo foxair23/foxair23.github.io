@@ -14,7 +14,7 @@ function servicePage(opts) {
     ${T.relatedServices(opts.related, prefix)}
   </div></div>
   ${T.faqSection(opts.faqs)}`;
-  return { file:opts.file, title:opts.title, description:opts.description, activePage:'services', body, schema:(opts.faqs?T.faqSchema(opts.faqs):'')+T.breadcrumbSchema(opts.crumbs) };
+  return { file:opts.file, title:opts.title, description:opts.description, activePage:'services', body, schema:(opts.faqs?T.faqSchema(opts.faqs):'')+T.serviceSchema(opts.h1, opts.description)+T.breadcrumbSchema(opts.crumbs) };
 }
 
 // ========== INSTALLATION ==========
@@ -24,6 +24,12 @@ function installHub() {
   const prefix = T.getPrefix('services/garage-door-installation/index.html');
   const ico = T.svgIcons();
   const crumbs = [{label:'Home',href:'index.html'},{label:'Services',href:'services/index.html'},{label:'Garage Door Installation'}];
+  const faqs = [
+    {q:'How much does a new garage door cost in San Diego?', a:'New garage doors range from $800 to $4,000+ installed for residential, depending on size, material, and insulation. A standard 16x7 steel insulated door typically runs $1,200&ndash;$2,200. <a href="'+prefix+'blog/new-garage-door-cost-san-diego.html">See our full cost breakdown</a>.'},
+    {q:'How long does garage door installation take?', a:'A standard residential garage door installation takes 4&ndash;6 hours. Custom doors or installations requiring structural work may take longer. We handle removal of the old door as part of the service.'},
+    {q:'What garage door brand do you recommend?', a:'As a Clopay Authorized Dealer, we recommend Clopay for their quality, variety, and comprehensive warranties. Their Imagine System lets you visualize doors on your actual home. <a href="'+prefix+'blog/garage-door-materials-comparison.html">Compare door materials</a>.'},
+    {q:'Will a new garage door increase my home value?', a:'Yes. Garage door replacement consistently ranks as one of the highest-ROI home improvements, often recovering 90&ndash;100% of cost at resale according to Remodeling Magazine\'s Cost vs. Value report.'}
+  ];
   const body = `
   ${T.heroInterior('Garage Door Installation', 'New garage doors transform your home\'s curb appeal, improve energy efficiency, and increase property value.', crumbs, prefix)}
   <div class="section"><div class="container">
@@ -37,8 +43,9 @@ function installHub() {
       <a href="custom.html" class="service-list-item"><div class="num">3</div><div><h4>Custom Garage Doors</h4><p>Unique designs tailored to your vision</p></div></a>
       <a href="styles-materials.html" class="service-list-item"><div class="num">4</div><div><h4>Styles &amp; Materials Guide</h4><p>Steel, wood, aluminum, composite, and more</p></div></a>
     </div>
-  </div></div>`;
-  return { file:'services/garage-door-installation/index.html', title:'New Garage Door Installation San Diego | Castle', description:'New garage door installation in San Diego. Clopay Authorized Dealer. Residential & commercial. Steel, wood, aluminum, custom. Free estimates. Call (858) 578-1990.', activePage:'services', body, schema:T.breadcrumbSchema(crumbs) };
+  </div></div>
+  ${T.faqSection(faqs)}`;
+  return { file:'services/garage-door-installation/index.html', title:'New Garage Door Installation San Diego | Castle', description:'New garage door installation in San Diego. Steel, wood, aluminum & Clopay premium doors. Free estimates from a veteran-owned company since 1981.', activePage:'services', body, schema:T.faqSchema(faqs)+T.serviceSchema('Garage Door Installation', 'New garage door installation for residential and commercial properties. Clopay Authorized Dealer. Steel, wood, aluminum, composite, and custom doors.')+T.breadcrumbSchema(crumbs) };
 }
 
 const installPages = [
@@ -89,6 +96,12 @@ const opCrumbs = (l) => [{label:'Home',href:'index.html'},{label:'Services',href
 function openersHub() {
   const prefix = T.getPrefix('services/garage-door-openers/index.html');
   const crumbs = [{label:'Home',href:'index.html'},{label:'Services',href:'services/index.html'},{label:'Garage Door Openers'}];
+  const faqs = [
+    {q:'Which garage door opener brand is the most reliable?', a:'We recommend LiftMaster for its proven reliability, smart home integration (myQ), battery backup, and strong manufacturer warranties. Chamberlain (same manufacturer) and Genie are also excellent choices. <a href="liftmaster.html">Learn more about LiftMaster openers</a>.'},
+    {q:'How much does it cost to replace a garage door opener?', a:'A new garage door opener with professional installation typically costs $350&ndash;$700 depending on the brand, drive type (belt, chain, wall-mount), and features (WiFi, battery backup). We provide upfront quotes.'},
+    {q:'Can I add WiFi to my existing garage door opener?', a:'In many cases, yes. The LiftMaster myQ Smart Garage Hub works with most openers manufactured after 1993, adding smartphone control without replacing the entire unit. <a href="smart-wifi.html">Learn more about smart openers</a>.'},
+    {q:'How long do garage door openers last?', a:'Modern garage door openers typically last 10&ndash;15 years with regular maintenance. If your opener is 12+ years old and experiencing issues, replacement is often more cost-effective than repair. <a href="repair.html">See our repair vs. replace guide</a>.'}
+  ];
   const body = `
   ${T.heroInterior('Garage Door Openers', 'Installation, repair, and replacement of all major opener brands.', crumbs, prefix)}
   <div class="section"><div class="container">
@@ -102,8 +115,9 @@ function openersHub() {
       <a href="smart-wifi.html" class="service-list-item"><div class="num">4</div><div><h4>Smart / WiFi-Enabled</h4><p>Control your garage from anywhere via smartphone</p></div></a>
       <a href="opener-types.html" class="service-list-item"><div class="num">5</div><div><h4>Opener Types Guide</h4><p>Belt, chain, screw, wall-mount &mdash; which is right?</p></div></a>
     </div>
-  </div></div>`;
-  return { file:'services/garage-door-openers/index.html', title:'Garage Door Openers San Diego | Castle', description:'Garage door opener installation and repair in San Diego. LiftMaster, Genie, Marantec. Smart/WiFi openers. Call (858) 578-1990.', activePage:'services', body, schema:T.breadcrumbSchema(crumbs) };
+  </div></div>
+  ${T.faqSection(faqs)}`;
+  return { file:'services/garage-door-openers/index.html', title:'Garage Door Opener Repair & Installation San Diego | Castle', description:'Garage door opener repair & installation in San Diego. LiftMaster, Marantec & Genie. Smart/WiFi, belt drive, chain drive. Call (858) 578-1990.', activePage:'services', body, schema:T.faqSchema(faqs)+T.serviceSchema('Garage Door Opener Installation & Repair', 'Installation and repair of LiftMaster, Marantec, and Genie garage door openers. Smart/WiFi-enabled, belt drive, chain drive, and wall-mount options.')+T.breadcrumbSchema(crumbs) };
 }
 
 const openerPages = [
@@ -154,11 +168,17 @@ const gateCrumbs = (l) => [{label:'Home',href:'index.html'},{label:'Services',hr
 function gateHub() {
   const prefix = T.getPrefix('services/gate-services/index.html');
   const crumbs = [{label:'Home',href:'index.html'},{label:'Services',href:'services/index.html'},{label:'Gate Services'}];
+  const faqs = [
+    {q:'How much does automatic gate installation cost?', a:'Automatic gate installation ranges from $4,000 to $12,000+ depending on gate type, material, size, and access control features. A basic automated driveway gate starts around $4,000. We provide free on-site estimates. <a href="installation.html">Learn more about gate installation</a>.'},
+    {q:'Can you add an automatic opener to my existing gate?', a:'In most cases, yes. We can retrofit an electric operator to your existing gate, provided it\'s structurally sound and properly balanced. This is often more affordable than replacing the entire gate. <a href="automatic-electric.html">Learn about gate automation</a>.'},
+    {q:'What types of gates do you install?', a:'We install sliding gates, swing gates, cantilever gates, and barrier arm gates in wrought iron, aluminum, steel, and wood. Both residential <a href="driveway.html">driveway gates</a> and commercial <a href="security.html">security gates</a>.'},
+    {q:'Do you repair wrought iron gates?', a:'Yes. We handle structural repairs including welding, straightening, rust treatment, and repainting, plus all mechanical and electrical components. <a href="repair.html">See our gate repair services</a>.'}
+  ];
   const body = `
   ${T.heroInterior('Gate Services', 'Installation, repair, and automation for residential and commercial gates.', crumbs, prefix)}
   <div class="section"><div class="container">
     <div class="content-section">
-      <p>Most garage door companies don&rsquo;t touch gates. Castle does. Gate installation and repair has been part of our service offering for decades, and it&rsquo;s one of the key things that sets us apart. Whether you need a new driveway gate, a security gate for your business, or repair on an existing automatic gate system, our team has the expertise.</p>
+      <p>Most garage door companies don&rsquo;t touch gates. Castle does. Gate installation and repair has been part of our service offering for decades, and it&rsquo;s one of the key things that sets us apart. Whether you need a new driveway gate, a security gate for your business, or repair on an existing automatic gate system, our team has the expertise. <a href="${prefix}blog/electric-gate-pros-cons.html">Read our guide on electric vs. manual gates</a>.</p>
     </div>
     <div class="service-list" style="margin-top:var(--space-8);">
       <a href="installation.html" class="service-list-item"><div class="num">1</div><div><h4>Gate Installation</h4><p>New gate design, fabrication, and installation</p></div></a>
@@ -168,8 +188,9 @@ function gateHub() {
       <a href="security.html" class="service-list-item"><div class="num">5</div><div><h4>Security Gates</h4><p>Controlled-access gates for properties and businesses</p></div></a>
       <a href="openers.html" class="service-list-item"><div class="num">6</div><div><h4>Gate Openers</h4><p>Installation and repair of gate operator systems</p></div></a>
     </div>
-  </div></div>`;
-  return { file:'services/gate-services/index.html', title:'Gate Installation & Repair San Diego | Castle', description:'Gate installation and repair in San Diego. Automatic, driveway, security gates. A specialty most competitors don\'t offer. Call (858) 578-1990.', activePage:'services', body, schema:T.breadcrumbSchema(crumbs) };
+  </div></div>
+  ${T.faqSection(faqs)}`;
+  return { file:'services/gate-services/index.html', title:'Gate Installation & Repair San Diego | Castle Garage Doors & Gates', description:'Gate installation & repair in San Diego — automatic, driveway, security & wrought iron gates. A specialty most competitors don\'t offer. Free estimates.', activePage:'services', body, schema:T.faqSchema(faqs)+T.serviceSchema('Gate Installation & Repair', 'Gate installation and repair for residential and commercial properties. Automatic, driveway, security, and wrought iron gates.')+T.breadcrumbSchema(crumbs) };
 }
 
 const gatePages = [

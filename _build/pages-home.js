@@ -10,7 +10,7 @@ function homepage() {
     <div class="hero-overlay"></div>
     <div class="hero-content container">
       <div class="hero-badge">${ico.star} VETERAN-OWNED &amp; FAMILY-OPERATED SINCE 1981</div>
-      <h1>San Diego&rsquo;s Most Trusted Garage Door <span style="color:var(--color-red)">&amp;</span> Gate Experts</h1>
+      <h1>San Diego Garage Door Repair <span style="color:var(--color-red)">&amp;</span> Gate Experts</h1>
       <p>Family-owned and veteran-operated for over 40 years. Expert repair, installation, and maintenance from San Diego to Riverside County.</p>
       <div class="hero-buttons">
         <a href="contact.html" class="btn btn-primary" data-track="schedule">Schedule Service</a>
@@ -143,8 +143,8 @@ function homepage() {
 
   return {
     file: 'index.html',
-    title: 'Castle Garage Doors & Gates | San Diego\'s Trusted Experts Since 1981',
-    description: 'Veteran-owned garage door and gate services in San Diego to Riverside County. 40+ years experience. Repair, installation, openers, and gates. Free estimates. Call (858) 578-1990.',
+    title: 'Garage Door Repair & Installation San Diego | Castle Garage Doors & Gates',
+    description: 'Veteran-owned garage door & gate experts serving San Diego to Riverside County since 1981. 24/7 emergency repair, free estimates. Call (858) 578-1990.',
     activePage: 'home',
     body
   };

@@ -26,7 +26,7 @@ function servicePage(opts) {
     description: opts.description,
     activePage: 'services',
     body,
-    schema: (opts.faqs ? T.faqSchema(opts.faqs) : '') + T.breadcrumbSchema(opts.crumbs)
+    schema: (opts.faqs ? T.faqSchema(opts.faqs) : '') + T.serviceSchema(opts.h1, opts.description) + T.breadcrumbSchema(opts.crumbs)
   };
 }
 
@@ -69,7 +69,7 @@ function servicesHub() {
   </div>`;
   return {
     file: 'services/index.html',
-    title: 'Garage Door & Gate Services | Castle Garage Doors & Gates',
+    title: 'Garage Door & Gate Services San Diego | Castle Garage Doors & Gates',
     description: 'Full-service garage door and gate company. Repair, installation, openers, and gates. Serving San Diego to Riverside County. Free estimates.',
     activePage: 'services',
     body,
@@ -84,6 +84,12 @@ function repairHub() {
   const prefix = T.getPrefix('services/garage-door-repair/index.html');
   const ico = T.svgIcons();
   const crumbs = repairCrumbs;
+  const repairFaqs = [
+    {q:'How much does garage door repair cost in San Diego?', a:'Most garage door repairs range from $100 to $400 depending on the issue. Spring replacement is typically $150&ndash;$350, cable replacement $120&ndash;$250, and roller replacement $100&ndash;$200. We provide an exact upfront quote before starting any work.'},
+    {q:'How long does a garage door repair take?', a:'Most repairs are completed in 1 to 2 hours. Our trucks carry common parts, so the majority of repairs are finished in a single visit without needing to order parts.'},
+    {q:'Do you offer same-day garage door repair?', a:'Yes. We offer same-day service for most repair calls received before 2 PM. For urgent situations, our <a href="emergency-repair.html">24/7 emergency repair service</a> is available nights, weekends, and holidays.'},
+    {q:'Is it safe to open my garage door with a broken spring?', a:'No. A door with a broken spring bears its full weight (150&ndash;250+ lbs) unsupported. Attempting to operate it manually or with the opener can cause injury or further damage. Call a professional for <a href="spring-replacement.html">spring replacement</a>.'}
+  ];
   const body = `
   ${T.heroInterior('Garage Door Repair', 'Fast, reliable garage door repair from a team with 40+ years of hands-on experience. Same-day service available.', crumbs, prefix)}
   <div class="section">
@@ -91,6 +97,44 @@ function repairHub() {
       <div class="content-section">
         <p>A malfunctioning garage door is more than an inconvenience &mdash; it&rsquo;s a security risk and a daily disruption. Whether your door is stuck, making strange noises, or completely off its tracks, Castle Garage Doors &amp; Gates has been solving these problems for San Diego and Riverside County homeowners since 1981.</p>
         <p>Our technicians arrive equipped to handle any repair on the spot. We stock common parts on our trucks so most repairs are completed in a single visit, getting you back to your routine as quickly as possible.</p>
+
+        <h2>Common Signs You Need Garage Door Repair</h2>
+        <p>Not sure if your garage door needs professional attention? Here are the most common warning signs:</p>
+        <ul>
+          <li><strong>Loud bang from the garage</strong> &mdash; this is usually a <a href="spring-replacement.html">broken torsion spring</a>, the most common repair we handle. <a href="${prefix}blog/signs-garage-door-spring-broken.html">Learn more about broken spring symptoms</a>.</li>
+          <li><strong>Door won&rsquo;t close or reverses</strong> &mdash; often a <a href="sensor-repair.html">safety sensor issue</a> that&rsquo;s straightforward to fix. <a href="${prefix}blog/garage-door-wont-close.html">See our troubleshooting guide</a>.</li>
+          <li><strong>Grinding, squeaking, or scraping noises</strong> &mdash; usually worn <a href="roller-replacement.html">rollers</a> or dry components that need lubrication.</li>
+          <li><strong>Door is crooked or uneven</strong> &mdash; can indicate a broken spring, <a href="cable-replacement.html">cable issue</a>, or <a href="track-repair.html">track misalignment</a>.</li>
+          <li><strong>Door feels extremely heavy</strong> &mdash; springs have failed and are no longer bearing the door&rsquo;s weight.</li>
+          <li><strong>Visible damage</strong> &mdash; dented <a href="panel-replacement.html">panels</a>, frayed cables, or gaps in spring coils.</li>
+        </ul>
+
+        <h2>Why DIY Garage Door Repairs Can Be Dangerous</h2>
+        <p>We understand the temptation to fix things yourself, but garage doors involve components under extreme tension. Torsion springs store enough energy to cause serious injury or death if handled improperly. Cable drums, heavy panels, and high-tension hardware all require professional tools and training. Every year, homeowners are seriously hurt attempting garage door repairs that should be left to trained technicians.</p>
+
+        <h2>What to Expect During a Castle Repair Visit</h2>
+        <p>When you call Castle for a repair, here&rsquo;s what happens:</p>
+        <ol>
+          <li><strong>Schedule a convenient time.</strong> Call us or <a href="${prefix}contact.html">book online</a>. Same-day appointments are usually available.</li>
+          <li><strong>On-site diagnosis.</strong> Our technician inspects the entire door system &mdash; not just the obvious symptom &mdash; to identify the root cause and any related issues.</li>
+          <li><strong>Upfront quote.</strong> You receive a written estimate before any work begins. No surprises, no pressure.</li>
+          <li><strong>Professional repair.</strong> Most repairs are completed in a single visit. We carry common springs, cables, rollers, and hardware on our trucks.</li>
+          <li><strong>Testing and cleanup.</strong> We test the door through multiple cycles, verify safety mechanisms, clean up the work area, and review everything with you.</li>
+        </ol>
+
+        <h2>24/7 Emergency Garage Door Repair</h2>
+        <p>A broken garage door doesn&rsquo;t always happen during business hours. Our <a href="emergency-repair.html">24/7 emergency repair service</a> means a skilled technician is available whenever you need one &mdash; nights, weekends, and holidays. We typically arrive within 60&ndash;90 minutes throughout our service area from San Diego to Riverside County.</p>
+
+        <h2>Why Choose Castle for Garage Door Repair</h2>
+        <ul>
+          <li><strong>40+ years of experience</strong> &mdash; we&rsquo;ve seen and fixed every garage door problem imaginable since 1981</li>
+          <li><strong>Parts on truck</strong> &mdash; most repairs completed in a single visit, no waiting for parts to be ordered</li>
+          <li><strong>Transparent pricing</strong> &mdash; upfront quotes with no hidden fees or surprise charges</li>
+          <li><strong>Veteran-owned values</strong> &mdash; discipline, integrity, and respect in every interaction</li>
+          <li><strong>Licensed, bonded &amp; insured</strong> &mdash; full protection for your home and property</li>
+          <li><strong>Authorized Home Depot provider</strong> &mdash; trusted to serve 28 Home Depot stores</li>
+        </ul>
+
         <h2>Repair Services We Offer</h2>
       </div>
       <div class="service-list" style="margin-top:var(--space-6);">
@@ -104,14 +148,15 @@ function repairHub() {
         <a href="emergency-repair.html" class="service-list-item" style="border-color:var(--color-red);"><div class="num" style="background:var(--color-red);">!</div><div><h4>Emergency Repair (24/7)</h4><p>Round-the-clock emergency garage door service</p></div></a>
       </div>
     </div>
-  </div>`;
+  </div>
+  ${T.faqSection(repairFaqs)}`;
   return {
     file: 'services/garage-door-repair/index.html',
     title: 'Garage Door Repair San Diego | Castle Garage Doors & Gates',
-    description: 'Expert garage door repair in San Diego & Riverside County. Springs, cables, rollers, panels, tracks. Same-day & 24/7 emergency service. Call (858) 578-1990.',
+    description: 'Fast garage door repair in San Diego — springs, cables, rollers, panels, tracks & sensors. Same-day & 24/7 emergency service. Call (858) 578-1990.',
     activePage: 'services',
     body,
-    schema: T.breadcrumbSchema(crumbs)
+    schema: T.faqSchema(repairFaqs) + T.serviceSchema('Garage Door Repair', 'Fast, reliable garage door repair including springs, cables, rollers, panels, tracks, drums, and sensors. Same-day and 24/7 emergency service available.') + T.breadcrumbSchema(crumbs)
   };
 }
 

@@ -16,7 +16,7 @@ function blogPost(opts) {
       </div>
     </div>
   </div></div>`;
-  return { file:opts.file, title:`${opts.h1} | Castle Garage Doors & Gates`, description:opts.description, activePage:'blog', body, schema:T.breadcrumbSchema(crumbs) };
+  return { file:opts.file, title:`${opts.h1} | Castle Garage Doors & Gates`, description:opts.description, activePage:'blog', body, schema:T.articleSchema(opts.h1, opts.isoDate || '2026-03-01', opts.description)+T.breadcrumbSchema(crumbs) };
 }
 
 module.exports = [
@@ -24,7 +24,7 @@ module.exports = [
     file:'blog/signs-garage-door-spring-broken.html',
     h1:'How to Know If Your Garage Door Spring Is Broken',
     shortTitle:'Broken Spring Signs',
-    tag:'Repair', date:'March 2026',
+    tag:'Repair', date:'March 2026', isoDate:'2026-03-01',
     description:'Learn the signs of a broken garage door spring: loud bang, heavy door, visible gap, crooked opening. What to do next and when to call a pro.',
     content:`<p>A broken garage door spring is the most common garage door failure, and it usually happens without warning. One moment your door works fine; the next morning it won&rsquo;t budge. Here&rsquo;s how to tell if a broken spring is the culprit, and what to do about it.</p>
 
@@ -75,7 +75,7 @@ module.exports = [
     file:'blog/new-garage-door-cost-san-diego.html',
     h1:'How Much Does a New Garage Door Cost in San Diego?',
     shortTitle:'Garage Door Costs',
-    tag:'Installation', date:'March 2026',
+    tag:'Installation', date:'March 2026', isoDate:'2026-03-01',
     description:'Realistic garage door costs for San Diego in 2026. Single door, double door, insulated, custom. What affects the price and how to budget.',
     content:`<p>If you&rsquo;re shopping for a new garage door in San Diego, you&rsquo;ll quickly discover that pricing varies enormously &mdash; from under $1,000 to well over $10,000. Here&rsquo;s a realistic breakdown to help you budget, based on what we see every day serving the San Diego and Riverside County markets.</p>
 
@@ -119,7 +119,7 @@ module.exports = [
     file:'blog/garage-door-maintenance-schedule.html',
     h1:'How Often Should You Service Your Garage Door?',
     shortTitle:'Maintenance Schedule',
-    tag:'Maintenance', date:'February 2026',
+    tag:'Maintenance', date:'February 2026', isoDate:'2026-02-01',
     description:'A simple garage door maintenance schedule. What to do monthly, quarterly, and annually to keep your door safe and reliable for years.',
     content:`<p>Your garage door is the largest moving part of your home, and it goes through roughly 1,500 cycles per year. Like any mechanical system, regular maintenance keeps it running safely, quietly, and extends the life of every component. Here&rsquo;s a straightforward schedule.</p>
 
@@ -159,7 +159,7 @@ module.exports = [
     file:'blog/garage-door-wont-close.html',
     h1:'Garage Door Won&rsquo;t Close? Here&rsquo;s What to Check',
     shortTitle:'Door Won\'t Close',
-    tag:'Troubleshooting', date:'February 2026',
+    tag:'Troubleshooting', date:'February 2026', isoDate:'2026-02-01',
     description:'Garage door won\'t close? Step-by-step troubleshooting: safety sensors, limit settings, track obstructions, and when to call a pro.',
     content:`<p>You press the button, the door starts to close, then reverses right back up. Or maybe it won&rsquo;t move at all. A garage door that refuses to close is one of the most frustrating &mdash; and most common &mdash; issues homeowners face. The good news: many causes are simple to identify, and some you can fix yourself.</p>
 
@@ -217,7 +217,7 @@ module.exports = [
     file:'blog/garage-door-materials-comparison.html',
     h1:'Choosing the Right Garage Door Material',
     shortTitle:'Materials Comparison',
-    tag:'Installation', date:'January 2026',
+    tag:'Installation', date:'January 2026', isoDate:'2026-01-15',
     description:'Steel vs wood vs aluminum vs composite garage doors. Pros, cons, costs, and which is best for San Diego\'s climate.',
     content:`<p>The material you choose for your garage door affects its appearance, durability, maintenance needs, insulation value, and cost. Here&rsquo;s an honest comparison of the four main options, with specific notes for San Diego and Riverside County homeowners.</p>
 
@@ -265,7 +265,7 @@ module.exports = [
     file:'blog/electric-gate-pros-cons.html',
     h1:'Electric Gate vs Manual Gate: Pros and Cons',
     shortTitle:'Electric vs Manual Gate',
-    tag:'Gates', date:'January 2026',
+    tag:'Gates', date:'January 2026', isoDate:'2026-01-10',
     description:'Comparing electric and manual gates: convenience, cost, security, and maintenance. Which is right for your San Diego property?',
     content:`<p>Adding a gate to your property is a significant investment in security, privacy, and curb appeal. One of the first decisions you&rsquo;ll face is whether to go with a manual gate or invest in an electric (automatic) system. Here&rsquo;s an honest comparison to help you decide.</p>
 

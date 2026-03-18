@@ -39,25 +39,10 @@ function aboutPage() {
       </div>
     </div>
     <div style="margin-top:var(--space-16);">
-      <div class="section-header"><span class="section-label">Our Team</span><h2>The People Behind Castle</h2><p>Our technicians are the heart of our company. Each team member undergoes extensive training and weekly safety meetings.</p></div>
-      <div class="services-grid" style="grid-template-columns:repeat(auto-fill,minmax(250px,1fr));">
-        <!-- REPLACE: Add real team member photos and bios -->
-        <div class="service-card" style="text-align:center;">
-          <div style="width:100px;height:100px;border-radius:50%;background:var(--color-border);margin:0 auto var(--space-4);"></div>
-          <h4>Team Member</h4><p style="font-size:var(--text-small);color:var(--color-text-muted);">Position title placeholder</p>
-        </div>
-        <div class="service-card" style="text-align:center;">
-          <div style="width:100px;height:100px;border-radius:50%;background:var(--color-border);margin:0 auto var(--space-4);"></div>
-          <h4>Team Member</h4><p style="font-size:var(--text-small);color:var(--color-text-muted);">Position title placeholder</p>
-        </div>
-        <div class="service-card" style="text-align:center;">
-          <div style="width:100px;height:100px;border-radius:50%;background:var(--color-border);margin:0 auto var(--space-4);"></div>
-          <h4>Team Member</h4><p style="font-size:var(--text-small);color:var(--color-text-muted);">Position title placeholder</p>
-        </div>
-      </div>
+      <div class="section-header"><span class="section-label">Our Team</span><h2>The People Behind Castle</h2><p>Our technicians are the heart of our company. Each team member undergoes extensive training and weekly safety meetings. With a team of experienced professionals, we bring decades of combined expertise to every job.</p></div>
     </div>
   </div></div>`;
-  return { file:'about/index.html', title:'About Us | Castle Garage Doors & Gates', description:'Castle Garage Doors & Gates: veteran-owned, family-operated since 1981. Learn about our story, values, and team. Serving San Diego to Riverside County.', activePage:'about', body, schema:T.breadcrumbSchema(crumbs) };
+  return { file:'about/index.html', title:'About Castle Garage Doors & Gates | Veteran-Owned Since 1981 | San Diego', description:'Family-owned & veteran-operated since 1981. Learn about Castle Garage Doors & Gates — San Diego\'s trusted garage door company for over 40 years.', activePage:'about', body, schema:T.breadcrumbSchema(crumbs) };
 }
 
 function reviewsPage() {
@@ -143,12 +128,12 @@ function blogIndex() {
   const prefix = T.getPrefix('blog/index.html');
   const crumbs = [{label:'Home',href:'index.html'},{label:'Blog'}];
   const posts = [
-    {slug:'signs-garage-door-spring-broken', title:'How to Know If Your Garage Door Spring Is Broken', excerpt:'Learn the telltale signs of a broken or failing garage door spring, and what to do next.', tag:'Repair', date:'March 2026'},
-    {slug:'new-garage-door-cost-san-diego', title:'How Much Does a New Garage Door Cost in San Diego?', excerpt:'A realistic breakdown of garage door costs for San Diego homeowners in 2026.', tag:'Installation', date:'March 2026'},
-    {slug:'garage-door-maintenance-schedule', title:'How Often Should You Service Your Garage Door?', excerpt:'A simple maintenance schedule to keep your garage door running safely for years.', tag:'Maintenance', date:'February 2026'},
-    {slug:'garage-door-wont-close', title:'Garage Door Won\'t Close? Here\'s What to Check', excerpt:'Troubleshooting steps when your garage door refuses to close all the way.', tag:'Troubleshooting', date:'February 2026'},
-    {slug:'garage-door-materials-comparison', title:'Choosing the Right Garage Door Material', excerpt:'Steel vs. wood vs. aluminum vs. composite: pros, cons, and best uses.', tag:'Installation', date:'January 2026'},
-    {slug:'electric-gate-pros-cons', title:'Electric Gate vs Manual Gate: Pros and Cons', excerpt:'Deciding between a manual and automatic gate? Here\'s what to consider.', tag:'Gates', date:'January 2026'},
+    {slug:'signs-garage-door-spring-broken', title:'How to Know If Your Garage Door Spring Is Broken', excerpt:'Learn the telltale signs of a broken or failing garage door spring, and what to do next.', tag:'Repair', date:'March 2026', img:'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=400&q=70', alt:'Close-up of a garage door torsion spring mounted on a metal shaft'},
+    {slug:'new-garage-door-cost-san-diego', title:'How Much Does a New Garage Door Cost in San Diego?', excerpt:'A realistic breakdown of garage door costs for San Diego homeowners in 2026.', tag:'Installation', date:'March 2026', img:'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=70', alt:'New garage door installed on a San Diego-style home'},
+    {slug:'garage-door-maintenance-schedule', title:'How Often Should You Service Your Garage Door?', excerpt:'A simple maintenance schedule to keep your garage door running safely for years.', tag:'Maintenance', date:'February 2026', img:'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&q=70', alt:'Technician performing garage door maintenance inspection'},
+    {slug:'garage-door-wont-close', title:'Garage Door Won\'t Close? Here\'s What to Check', excerpt:'Troubleshooting steps when your garage door refuses to close all the way.', tag:'Troubleshooting', date:'February 2026', img:'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&q=70', alt:'Garage door partially open showing safety sensor at bottom'},
+    {slug:'garage-door-materials-comparison', title:'Choosing the Right Garage Door Material', excerpt:'Steel vs. wood vs. aluminum vs. composite: pros, cons, and best uses.', tag:'Installation', date:'January 2026', img:'https://images.unsplash.com/photo-1513880989635-6eb491ce7f5b?w=400&q=70', alt:'Row of different garage door styles and materials on residential homes'},
+    {slug:'electric-gate-pros-cons', title:'Electric Gate vs Manual Gate: Pros and Cons', excerpt:'Deciding between a manual and automatic gate? Here\'s what to consider.', tag:'Gates', date:'January 2026', img:'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=400&q=70', alt:'Automatic wrought iron driveway gate on a residential property'},
   ];
   const body = `
   ${T.heroInterior('Blog &amp; Resources', 'Expert advice, tips, and guides for garage door and gate owners.', crumbs, prefix)}
@@ -156,8 +141,7 @@ function blogIndex() {
     <div class="blog-grid">
       ${posts.map(p => `<article class="blog-card">
         <div class="blog-card-img">
-          <!-- REPLACE: Blog featured image for "${p.title}" -->
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&q=60" alt="${p.title}" loading="lazy">
+          <img src="${p.img}" alt="${p.alt}" loading="lazy">
         </div>
         <div class="blog-card-body">
           <div class="blog-card-tag">${p.tag}</div>
@@ -168,7 +152,7 @@ function blogIndex() {
       </article>`).join('\n      ')}
     </div>
   </div></div>`;
-  return { file:'blog/index.html', title:'Blog & Resources | Castle Garage Doors & Gates', description:'Expert garage door and gate advice, tips, and guides from Castle Garage Doors & Gates. San Diego\'s trusted experts since 1981.', activePage:'blog', body, schema:T.breadcrumbSchema(crumbs) };
+  return { file:'blog/index.html', title:'Garage Door Tips & Guides | Castle Garage Doors & Gates Blog', description:'Expert garage door tips, maintenance guides & troubleshooting advice from Castle Garage Doors & Gates — serving San Diego since 1981.', activePage:'blog', body, schema:T.breadcrumbSchema(crumbs) };
 }
 
 function contactPage() {
@@ -216,7 +200,7 @@ function contactPage() {
         <h3>Get In Touch</h3>
         <div class="contact-info-item">${T.svgIcons().clock}<p><strong>Call Us</strong><a href="${T.PHONE_LINK}">${T.PHONE}</a></p></div>
         <div class="contact-info-item">${T.svgIcons().mail}<p><strong>Email</strong><a href="mailto:info@castlegaragedoors.com">info@castlegaragedoors.com</a></p></div>
-        <div class="contact-info-item">${T.svgIcons().map}<p><strong>Address</strong>1281 Simpson Way<br>Escondido, CA 92029</p></div>
+        <div class="contact-info-item">${T.svgIcons().map}<p><strong>Address</strong>1291 Simpson Way Suite D<br>Escondido, CA 92029</p></div>
         <div class="contact-info-item">${T.svgIcons().clock}<p><strong>Hours</strong>Mon&ndash;Fri: 7:00 AM &ndash; 6:00 PM<br>Saturday: 8:00 AM &ndash; 2:00 PM<br>Sunday: Closed<br><em style="color:var(--color-red-light);">24/7 Emergency Service Available</em></p></div>
         <div style="margin-top:auto;padding-top:var(--space-4);border-top:1px solid rgba(255,255,255,0.1);">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000!2d-117.0864!3d33.0992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDA1JzU3LjEiTiAxMTfCsDA1JzExLjAiVw!5e0!3m2!1sen!2sus" style="width:100%;height:200px;border:0;border-radius:var(--radius);" allowfullscreen="" loading="lazy" title="Castle Garage Doors location"></iframe>

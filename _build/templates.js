@@ -154,6 +154,7 @@ function footer(prefix) {
           <div class="footer-links">
             <a href="${PHONE_LINK}">${PHONE}</a>
             <a href="mailto:info@castlegaragedoors.com">info@castlegaragedoors.com</a>
+            <span style="font-size:var(--text-small);line-height:1.4;">1291 Simpson Way Suite D<br>Escondido, CA 92029</span>
             <a href="${prefix}contact.html">Schedule Service</a>
             <a href="${prefix}specials.html">Specials &amp; Coupons</a>
           </div>
@@ -252,13 +253,25 @@ function processSteps(steps) {
 
 function localBusinessSchema() {
   return `<script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Castle Garage Doors & Gates","description":"Veteran-owned garage door and gate services serving San Diego to Riverside County since 1981.","url":"${SITE_URL}","telephone":"${PHONE}","address":{"@type":"PostalAddress","streetAddress":"1281 Simpson Way","addressLocality":"Escondido","addressRegion":"CA","postalCode":"92029","addressCountry":"US"},"areaServed":["San Diego County","Riverside County"],"foundingDate":"1981","priceRange":"$$","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"164","bestRating":"5"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"14:00"}]}
+  {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","@id":"${SITE_URL}/#business","name":"Castle Garage Doors & Gates","image":"${SITE_URL}/${LOGO_PATH}","description":"Veteran-owned, family-operated garage door and gate service company serving San Diego to Riverside County since 1981. Authorized Home Depot Service Provider and Clopay Authorized Dealer.","url":"${SITE_URL}","telephone":"${PHONE}","email":"info@castlegaragedoors.com","address":{"@type":"PostalAddress","streetAddress":"1291 Simpson Way Suite D","addressLocality":"Escondido","addressRegion":"CA","postalCode":"92029","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":33.1192,"longitude":-117.0864},"areaServed":["San Diego, CA","Escondido, CA","Oceanside, CA","Carlsbad, CA","Encinitas, CA","Temecula, CA","Murrieta, CA","Fallbrook, CA","Corona, CA"],"foundingDate":"1981","priceRange":"$$","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"164","bestRating":"5"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"14:00"}],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Garage Door & Gate Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Garage Door Repair"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Garage Door Installation"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Garage Door Opener Installation & Repair"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Gate Installation & Repair"}}]},"sameAs":["https://www.facebook.com/castlegaragedoorscorp/","https://www.yelp.com/biz/castle-garage-doors-escondido","https://maps.app.goo.gl/T9DtTWjanN9Zgyte9"]}
   </script>`;
 }
 
 function breadcrumbSchema(items) {
   return `<script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[${items.map((item, i) => `{"@type":"ListItem","position":${i+1},"name":"${item.label}","item":"${SITE_URL}/${item.href || ''}"}`).join(',')}]}
+  </script>`;
+}
+
+function serviceSchema(name, description) {
+  return `<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Service","name":"${name}","description":"${description.replace(/"/g,'\\"')}","provider":{"@id":"${SITE_URL}/#business"},"areaServed":"San Diego to Riverside County, CA","serviceType":"${name}"}
+  </script>`;
+}
+
+function articleSchema(headline, date, description) {
+  return `<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"${headline.replace(/"/g,'\\"').replace(/&rsquo;/g,"'")}","datePublished":"${date}","dateModified":"${date}","author":{"@id":"${SITE_URL}/#business"},"publisher":{"@id":"${SITE_URL}/#business"},"description":"${description.replace(/"/g,'\\"')}"}
   </script>`;
 }
 
@@ -278,6 +291,9 @@ function pageHTML(opts) {
   <meta property="og:description" content="${opts.description}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="${SITE_URL}/${opts.file.replace('index.html','')}">
+  <meta property="og:site_name" content="Castle Garage Doors & Gates">
+  <meta property="og:image" content="${SITE_URL}/${LOGO_PATH}">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="stylesheet" href="${prefix}styles.css">
   ${localBusinessSchema()}
   ${opts.schema || ''}
@@ -299,6 +315,6 @@ module.exports = {
   PHONE, PHONE_LINK, SITE_URL, LOGO_PATH,
   svgIcons, header, footer, mobileNav, floatingCta, trustBar,
   breadcrumb, heroInterior, faqSection, faqSchema, relatedServices,
-  processSteps, localBusinessSchema, breadcrumbSchema, pageHTML,
-  getPrefix, phoneIcon
+  processSteps, localBusinessSchema, breadcrumbSchema, serviceSchema,
+  articleSchema, pageHTML, getPrefix, phoneIcon
 };
