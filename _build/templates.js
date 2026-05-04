@@ -1,8 +1,8 @@
 // HTML template functions for Castle Garage Doors & Gates
 // Used by generate.js to build all pages
 
-const PHONE = '(858) 578-1990';
-const PHONE_LINK = 'tel:8585781990';
+const PHONE = '(800) 576-1397';
+const PHONE_LINK = 'tel:8005761397';
 const SITE_URL = 'https://www.castlegaragedoors.com';
 const LOGO_PATH = 'logo.png';
 
@@ -169,6 +169,7 @@ function footer(prefix) {
           <span class="footer-badge">BBB A+</span>
           <span class="footer-badge">Veteran-Owned</span>
           <span class="footer-badge">Licensed &amp; Insured</span>
+          <span class="footer-badge">CSLB #1154002 (C-61/D-28)</span>
         </div>
       </div>
     </div>
@@ -182,8 +183,9 @@ function trustBar() {
         <div class="trust-badge">${svgIcons().home} Authorized Home Depot Provider</div>
         <div class="trust-badge">${svgIcons().shield} Clopay Authorized Dealer</div>
         <div class="trust-badge">${svgIcons().check} BBB A+ Rating</div>
-        <div class="trust-badge">${svgIcons().star} <span>Yelp <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 164 Reviews</span></div>
-        <div class="trust-badge">${svgIcons().shield} Licensed, Bonded &amp; Insured</div>
+        <div class="trust-badge">${svgIcons().star} <span>Google <span class="stars">&#9733;&#9733;&#9733;&#9733;</span> 4.4 (49 Reviews)</span></div>
+        <div class="trust-badge">${svgIcons().star} <span>Yelp <span class="stars">&#9733;&#9733;&#9733;&#9733;</span> 4.4 (161 Reviews)</span></div>
+        <div class="trust-badge">${svgIcons().shield} CSLB #1154002</div>
       </div>
     </div>
   </div>`;
@@ -253,7 +255,7 @@ function processSteps(steps) {
 
 function localBusinessSchema() {
   return `<script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","@id":"${SITE_URL}/#business","name":"Castle Garage Doors & Gates","image":"${SITE_URL}/${LOGO_PATH}","description":"Veteran-owned, family-operated garage door and gate service company serving San Diego to Riverside County since 1981. Authorized Home Depot Service Provider and Clopay Authorized Dealer.","url":"${SITE_URL}","telephone":"${PHONE}","email":"info@castlegaragedoors.com","address":{"@type":"PostalAddress","streetAddress":"1291 Simpson Way Suite D","addressLocality":"Escondido","addressRegion":"CA","postalCode":"92029","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":33.1192,"longitude":-117.0864},"areaServed":["San Diego, CA","Escondido, CA","Oceanside, CA","Carlsbad, CA","Encinitas, CA","Temecula, CA","Murrieta, CA","Fallbrook, CA","Corona, CA"],"foundingDate":"1981","priceRange":"$$","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"164","bestRating":"5"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"14:00"}],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Garage Door & Gate Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Garage Door Repair"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Garage Door Installation"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Garage Door Opener Installation & Repair"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Gate Installation & Repair"}}]},"sameAs":["https://www.facebook.com/castlegaragedoorscorp/","https://www.yelp.com/biz/castle-garage-doors-escondido","https://maps.app.goo.gl/T9DtTWjanN9Zgyte9"]}
+  {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","@id":"${SITE_URL}/#business","name":"Castle Garage Doors & Gates","image":"${SITE_URL}/${LOGO_PATH}","description":"Veteran-owned, family-operated garage door and gate service company serving San Diego to Riverside County since 1981. Authorized Home Depot Service Provider and Clopay Authorized Dealer.","url":"${SITE_URL}","telephone":"${PHONE}","email":"info@castlegaragedoors.com","address":{"@type":"PostalAddress","streetAddress":"1291 Simpson Way Suite D","addressLocality":"Escondido","addressRegion":"CA","postalCode":"92029","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":33.1192,"longitude":-117.0864},"areaServed":["San Diego, CA","Escondido, CA","Oceanside, CA","Carlsbad, CA","Encinitas, CA","Temecula, CA","Murrieta, CA","Fallbrook, CA","Corona, CA"],"foundingDate":"1981","priceRange":"$$","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.4","reviewCount":"210","bestRating":"5"},"hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"license","name":"CSLB Contractor License","recognizedBy":{"@type":"GovernmentOrganization","name":"California Contractors State License Board"},"identifier":"1154002","description":"C-61/D-28 — Door Systems"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"06:30","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"07:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Garage Door & Gate Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Garage Door Repair"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Garage Door Installation"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Garage Door Opener Installation & Repair"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Gate Installation & Repair"}}]},"sameAs":["https://www.facebook.com/castlegaragedoorscorp/","https://www.yelp.com/biz/castle-garage-doors-escondido","https://maps.app.goo.gl/T9DtTWjanN9Zgyte9"]}
   </script>`;
 }
 

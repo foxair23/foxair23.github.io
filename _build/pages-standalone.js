@@ -32,10 +32,31 @@ function aboutPage() {
     <div style="margin-top:var(--space-16);">
       <div class="section-header"><span class="section-label">Credentials</span><h2>Certifications &amp; Partnerships</h2></div>
       <div class="certifications">
+        <div class="cert-card">${ico.shield}<h4>CSLB License #1154002</h4><p>C-61/D-28 — Door Systems</p></div>
         <div class="cert-card">${ico.home}<h4>Authorized Home Depot Provider</h4><p>Covering 28 stores</p></div>
         <div class="cert-card">${ico.shield}<h4>Clopay Authorized Dealer</h4><p>Premium garage doors</p></div>
         <div class="cert-card">${ico.check}<h4>BBB A+ Rating</h4><p>Accredited business</p></div>
-        <div class="cert-card">${ico.star}<h4>Top-Rated on Yelp</h4><p>164 reviews, 5 stars</p></div>
+        <div class="cert-card">${ico.star}<h4>Google Reviews</h4><p>4.4 stars (49 reviews)</p></div>
+        <div class="cert-card">${ico.star}<h4>Yelp Reviews</h4><p>4.4 stars (161 reviews)</p></div>
+      </div>
+    </div>
+    <div style="margin-top:var(--space-16);">
+      <div class="section-header"><span class="section-label">Our History</span><h2>Company Timeline</h2></div>
+      <div class="timeline">
+        <div class="timeline-item"><div class="timeline-year">1981</div><div class="timeline-content"><h4>Castle Garage Doors Founded</h4><p>Started as a small family operation in San Diego County, focused on honest, reliable garage door repair.</p></div></div>
+        <div class="timeline-item"><div class="timeline-year">1990s</div><div class="timeline-content"><h4>Service Area Expansion</h4><p>Grew from San Diego to cover North County and parts of Riverside County, adding gate installation and repair services.</p></div></div>
+        <div class="timeline-item"><div class="timeline-year">2000s</div><div class="timeline-content"><h4>Clopay Authorized Dealer</h4><p>Became an authorized Clopay dealer, offering premium residential and commercial garage door lines.</p></div></div>
+        <div class="timeline-item"><div class="timeline-year">2010s</div><div class="timeline-content"><h4>Home Depot Partnership</h4><p>Selected as an Authorized Home Depot Service Provider covering 28 stores across Southern California.</p></div></div>
+        <div class="timeline-item"><div class="timeline-year">Today</div><div class="timeline-content"><h4>40+ Years Strong</h4><p>Still veteran-owned, still family-operated. Now serving the full San Diego to Riverside County corridor with a team of experienced technicians.</p></div></div>
+      </div>
+    </div>
+    <div style="margin-top:var(--space-16);">
+      <div class="section-header"><span class="section-label">By the Numbers</span><h2>Castle at a Glance</h2></div>
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-number">40+</div><div class="stat-label">Years in Business</div></div>
+        <div class="stat-card"><div class="stat-number">28</div><div class="stat-label">Home Depot Stores Covered</div></div>
+        <div class="stat-card"><div class="stat-number">210+</div><div class="stat-label">Online Reviews</div></div>
+        <div class="stat-card"><div class="stat-number">12</div><div class="stat-label">Service Areas</div></div>
       </div>
     </div>
     <div style="margin-top:var(--space-16);">
@@ -62,9 +83,9 @@ function reviewsPage() {
   ${T.heroInterior('Customer Reviews', 'See what our customers say about Castle Garage Doors &amp; Gates.', crumbs, prefix)}
   <div class="section"><div class="container">
     <div class="reviews-summary">
-      <div class="big-rating">4.8</div>
-      <div class="stars-big">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <p style="margin:var(--space-2) auto;color:var(--color-text-secondary);">Based on 200+ reviews across Google and Yelp</p>
+      <div class="big-rating">4.4</div>
+      <div class="stars-big">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+      <p style="margin:var(--space-2) auto;color:var(--color-text-secondary);">Based on 210+ reviews across Google (49) and Yelp (161)</p>
       <div style="margin-top:var(--space-4);display:flex;justify-content:center;gap:var(--space-4);flex-wrap:wrap;">
         <a href="https://maps.app.goo.gl/T9DtTWjanN9Zgyte9" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">See Google Reviews</a>
         <a href="https://www.yelp.com/biz/castle-garage-doors-escondido" class="btn btn-secondary btn-sm" target="_blank" rel="noopener">See Yelp Reviews</a>
@@ -87,7 +108,10 @@ function reviewsPage() {
       </div>
     </div>
   </div></div>`;
-  return { file:'reviews.html', title:'Customer Reviews | Castle Garage Doors & Gates', description:'Read reviews from Castle Garage Doors & Gates customers. Rated 4.8 stars from 200+ reviews. San Diego to Riverside County.', activePage:'reviews', body, schema:T.breadcrumbSchema(crumbs) };
+  const reviewSchema = `<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"LocalBusiness","name":"Castle Garage Doors & Gates","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.4","reviewCount":"210","bestRating":"5"},"review":[${reviews.slice(0,3).map(r => `{"@type":"Review","reviewRating":{"@type":"Rating","ratingValue":"${r.stars}"},"author":{"@type":"Person","name":"${r.author}"},"reviewBody":"${r.quote.replace(/"/g,'\\"')}"}`).join(',')}]}
+  </script>`;
+  return { file:'reviews.html', title:'Customer Reviews | Castle Garage Doors & Gates', description:'Read reviews from Castle Garage Doors & Gates customers. Rated 4.4 stars from 210+ reviews on Google and Yelp. San Diego to Riverside County.', activePage:'reviews', body, schema:T.breadcrumbSchema(crumbs)+reviewSchema };
 }
 
 function galleryPage() {
@@ -201,14 +225,15 @@ function contactPage() {
         <div class="contact-info-item">${T.svgIcons().clock}<p><strong>Call Us</strong><a href="${T.PHONE_LINK}">${T.PHONE}</a></p></div>
         <div class="contact-info-item">${T.svgIcons().mail}<p><strong>Email</strong><a href="mailto:info@castlegaragedoors.com">info@castlegaragedoors.com</a></p></div>
         <div class="contact-info-item">${T.svgIcons().map}<p><strong>Address</strong>1291 Simpson Way Suite D<br>Escondido, CA 92029</p></div>
-        <div class="contact-info-item">${T.svgIcons().clock}<p><strong>Hours</strong>Mon&ndash;Fri: 7:00 AM &ndash; 6:00 PM<br>Saturday: 8:00 AM &ndash; 2:00 PM<br>Sunday: Closed<br><em style="color:var(--color-red-light);">24/7 Emergency Service Available</em></p></div>
+        <div class="contact-info-item">${T.svgIcons().shield}<p><strong>License</strong>CSLB #1154002 (C-61/D-28)</p></div>
+        <div class="contact-info-item">${T.svgIcons().clock}<p><strong>Hours</strong>Mon&ndash;Thu: 6:30 AM &ndash; 4:30 PM<br>Friday: 7:00 AM &ndash; 4:30 PM<br>Saturday: 8:00 AM &ndash; 12:00 PM<br>Sunday: Closed<br><em style="color:var(--color-red-light);">24/7 Emergency Service Available</em></p></div>
         <div style="margin-top:auto;padding-top:var(--space-4);border-top:1px solid rgba(255,255,255,0.1);">
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000!2d-117.0864!3d33.0992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDA1JzU3LjEiTiAxMTfCsDA1JzExLjAiVw!5e0!3m2!1sen!2sus" style="width:100%;height:200px;border:0;border-radius:var(--radius);" allowfullscreen="" loading="lazy" title="Castle Garage Doors location"></iframe>
         </div>
       </div>
     </div>
   </div></div>`;
-  return { file:'contact.html', title:'Contact Us | Castle Garage Doors & Gates', description:'Contact Castle Garage Doors & Gates. Schedule service, get a free estimate, or call (858) 578-1990. Escondido, CA.', activePage:'contact', body, schema:T.breadcrumbSchema(crumbs) };
+  return { file:'contact.html', title:'Contact Us | Castle Garage Doors & Gates', description:'Contact Castle Garage Doors & Gates. Schedule service, get a free estimate, or call (800) 576-1397. Escondido, CA.', activePage:'contact', body, schema:T.breadcrumbSchema(crumbs) };
 }
 
 function specialsPage() {
@@ -242,6 +267,17 @@ function specialsPage() {
         <a href="${T.PHONE_LINK}" class="btn btn-primary">Call to Redeem</a>
         <p class="fine-print">Valid ID required. Cannot be combined with other offers. Up to $100 maximum discount.</p>
       </div>
+      <div class="special-card">
+        <h3>$89 Garage Door Tune-Up</h3>
+        <p>Complete 25-point garage door inspection, lubrication, balance test, and safety check. Prevent costly breakdowns.</p>
+        <a href="${prefix}contact.html" class="btn btn-primary">Book Tune-Up</a>
+        <p class="fine-print">Includes visual inspection of springs, cables, rollers, and hardware. Parts extra if needed. Expires 12/31/2026.</p>
+      </div>
+    </div>
+    <div style="margin-top:var(--space-12);text-align:center;padding:var(--space-8);background:var(--color-surface);border-radius:var(--radius);">
+      <h3>How to Redeem</h3>
+      <p style="color:var(--color-text-secondary);max-width:600px;margin:var(--space-2) auto var(--space-4);">Mention the offer when you call or note it in your online service request. Our team will apply the discount to your invoice. Only one offer per service visit.</p>
+      <a href="${T.PHONE_LINK}" class="btn btn-primary">Call ${T.PHONE}</a>
     </div>
   </div></div>`;
   return { file:'specials.html', title:'Specials & Coupons | Castle Garage Doors & Gates', description:'Current specials and coupons from Castle Garage Doors & Gates. Save on repairs, installations, and openers. San Diego & Riverside County.', activePage:'', body, schema:T.breadcrumbSchema(crumbs) };
@@ -253,17 +289,68 @@ function privacyPage() {
   const body = `
   ${T.heroInterior('Privacy Policy', '', crumbs, prefix)}
   <div class="section"><div class="container"><div class="content-section">
-    <p><strong>Last updated:</strong> March 2026</p>
+    <p><strong>Last updated:</strong> May 2026</p>
+    <p>Castle Garage Doors &amp; Gates (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) respects your privacy. This policy explains what personal information we collect, how we use it, and your rights under applicable laws including the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA).</p>
+
     <h2>Information We Collect</h2>
-    <p>When you use our website, schedule service, or contact us, we may collect: your name, phone number, email address, physical address, and information about your service needs. This information is used solely to provide the services you request and to communicate with you about your service.</p>
+    <p>We collect personal information that you voluntarily provide when you:</p>
+    <ul>
+      <li>Submit a service request or contact form on our website</li>
+      <li>Call us to schedule service or request an estimate</li>
+      <li>Communicate with us via email</li>
+    </ul>
+    <p>This may include: your name, phone number, email address, physical address, and details about your garage door or gate service needs.</p>
+    <p>We may also automatically collect certain technical information when you visit our website, including your IP address, browser type, device type, pages visited, and referring URL. This data is collected via cookies and similar technologies for analytics purposes.</p>
+
     <h2>How We Use Your Information</h2>
-    <ul><li>To respond to service requests and inquiries</li><li>To schedule and provide garage door and gate services</li><li>To send service reminders and follow-up communications</li><li>To improve our website and services</li></ul>
+    <ul>
+      <li>To respond to your service requests and inquiries</li>
+      <li>To schedule and provide garage door and gate services</li>
+      <li>To send appointment confirmations, service reminders, and follow-up communications</li>
+      <li>To improve our website, services, and customer experience</li>
+      <li>To comply with legal obligations</li>
+    </ul>
+
     <h2>Information Sharing</h2>
-    <p>We do not sell, trade, or otherwise transfer your personal information to outside parties. We may share information with trusted third parties who assist us in operating our website, conducting our business, or servicing you, provided those parties agree to keep this information confidential.</p>
-    <h2>Cookies</h2>
-    <p>Our website may use cookies to enhance your browsing experience and to collect aggregate analytics data. You can choose to disable cookies through your browser settings.</p>
-    <h2>Contact</h2>
-    <p>If you have questions about this privacy policy, contact us at <a href="mailto:info@castlegaragedoors.com">info@castlegaragedoors.com</a> or call <a href="${T.PHONE_LINK}">${T.PHONE}</a>.</p>
+    <p>We do <strong>not</strong> sell your personal information to third parties. We may share your information with:</p>
+    <ul>
+      <li>Service partners (e.g., scheduling software, payment processors) who need it to help us serve you</li>
+      <li>Analytics providers (e.g., Google Analytics) to help us understand website usage</li>
+      <li>Legal authorities when required by law</li>
+    </ul>
+    <p>All third-party service providers are bound by confidentiality agreements and may only use your data to perform services on our behalf.</p>
+
+    <h2>Cookies &amp; Tracking</h2>
+    <p>Our website uses cookies and similar technologies to improve your experience and collect aggregate analytics. You can manage cookie preferences through your browser settings. Disabling cookies may affect some website functionality.</p>
+
+    <h2>Your California Privacy Rights (CCPA/CPRA)</h2>
+    <p>If you are a California resident, you have the right to:</p>
+    <ul>
+      <li><strong>Know</strong> what personal information we collect, use, and disclose</li>
+      <li><strong>Delete</strong> your personal information (subject to certain exceptions)</li>
+      <li><strong>Opt out</strong> of the sale or sharing of your personal information &mdash; we do not sell your data</li>
+      <li><strong>Non-discrimination</strong> for exercising your privacy rights</li>
+      <li><strong>Correct</strong> inaccurate personal information we hold about you</li>
+      <li><strong>Limit use</strong> of sensitive personal information</li>
+    </ul>
+    <p>To exercise any of these rights, contact us at <a href="mailto:info@castlegaragedoors.com">info@castlegaragedoors.com</a> or call <a href="${T.PHONE_LINK}">${T.PHONE}</a>. We will respond within 45 days as required by law.</p>
+
+    <h2>Data Retention</h2>
+    <p>We retain your personal information only as long as necessary to fulfill the purposes described in this policy, or as required by law. Service records may be retained for warranty and legal compliance purposes.</p>
+
+    <h2>Security</h2>
+    <p>We implement reasonable administrative, technical, and physical safeguards to protect your personal information. However, no method of transmission over the Internet is 100% secure.</p>
+
+    <h2>Changes to This Policy</h2>
+    <p>We may update this policy from time to time. Changes will be posted on this page with an updated effective date.</p>
+
+    <h2>Contact Us</h2>
+    <p>If you have questions about this privacy policy or wish to exercise your privacy rights, contact us:</p>
+    <ul>
+      <li>Email: <a href="mailto:info@castlegaragedoors.com">info@castlegaragedoors.com</a></li>
+      <li>Phone: <a href="${T.PHONE_LINK}">${T.PHONE}</a></li>
+      <li>Mail: Castle Garage Doors &amp; Gates, 1291 Simpson Way Suite D, Escondido, CA 92029</li>
+    </ul>
   </div></div></div>`;
   return { file:'privacy.html', title:'Privacy Policy | Castle Garage Doors & Gates', description:'Privacy policy for Castle Garage Doors & Gates website.', activePage:'', body, schema:T.breadcrumbSchema(crumbs) };
 }
@@ -274,17 +361,44 @@ function termsPage() {
   const body = `
   ${T.heroInterior('Terms of Service', '', crumbs, prefix)}
   <div class="section"><div class="container"><div class="content-section">
-    <p><strong>Last updated:</strong> March 2026</p>
-    <h2>Agreement to Terms</h2>
-    <p>By accessing and using the Castle Garage Doors &amp; Gates website, you agree to these Terms of Service. If you do not agree, please do not use the website.</p>
-    <h2>Services</h2>
-    <p>Castle Garage Doors &amp; Gates provides garage door and gate repair, installation, and maintenance services. All services are subject to availability in your area. Pricing is provided via individual estimates and may vary based on the scope of work.</p>
-    <h2>Website Use</h2>
-    <p>The content on this website is for general informational purposes only. While we strive to keep information current and accurate, we make no warranties about the completeness or accuracy of website content.</p>
-    <h2>Limitation of Liability</h2>
-    <p>Castle Garage Doors &amp; Gates shall not be liable for any indirect, incidental, or consequential damages arising from use of this website. Our liability is limited to the amount paid for services rendered.</p>
-    <h2>Contact</h2>
-    <p>Questions about these terms? Contact us at <a href="mailto:info@castlegaragedoors.com">info@castlegaragedoors.com</a> or call <a href="${T.PHONE_LINK}">${T.PHONE}</a>.</p>
+    <p><strong>Last updated:</strong> May 2026</p>
+
+    <h2>1. Agreement to Terms</h2>
+    <p>By accessing and using the Castle Garage Doors &amp; Gates website (&ldquo;Site&rdquo;), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the Site.</p>
+
+    <h2>2. Services</h2>
+    <p>Castle Garage Doors &amp; Gates provides garage door and gate repair, installation, and maintenance services in the San Diego to Riverside County area. All services are subject to availability. Pricing is provided through individual estimates and may vary based on the scope of work, materials, and site conditions.</p>
+    <p>Estimates are valid for 30 days unless otherwise stated. Final pricing may differ from estimates if additional work is discovered during service. We will obtain your approval before performing any work beyond the original estimate.</p>
+
+    <h2>3. Warranties</h2>
+    <p>All parts and labor are warranted as described in your service invoice. Manufacturer warranties on parts (springs, openers, doors, etc.) are passed through to you. Warranty claims should be directed to us at <a href="${T.PHONE_LINK}">${T.PHONE}</a> or <a href="mailto:info@castlegaragedoors.com">info@castlegaragedoors.com</a>.</p>
+
+    <h2>4. Website Use</h2>
+    <p>The content on this Site is for general informational purposes only. While we strive to keep information current and accurate, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, or reliability of the Site content.</p>
+    <p>You agree not to use the Site for any unlawful purpose or in any way that could damage, disable, or impair the Site.</p>
+
+    <h2>5. Intellectual Property</h2>
+    <p>All content on this Site &mdash; including text, images, logos, and design &mdash; is the property of Castle Garage Doors &amp; Gates and is protected by copyright and other intellectual property laws. You may not reproduce, distribute, or create derivative works without our written permission.</p>
+
+    <h2>6. Limitation of Liability</h2>
+    <p>To the fullest extent permitted by California law, Castle Garage Doors &amp; Gates shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of this Site or our services. Our total liability for any claim shall not exceed the amount you paid for the specific service giving rise to the claim.</p>
+
+    <h2>7. Indemnification</h2>
+    <p>You agree to indemnify and hold harmless Castle Garage Doors &amp; Gates, its owners, employees, and agents from any claims, losses, or damages (including attorney&rsquo;s fees) arising from your use of the Site or violation of these terms.</p>
+
+    <h2>8. Governing Law</h2>
+    <p>These terms are governed by the laws of the State of California. Any disputes shall be resolved in the courts of San Diego County, California.</p>
+
+    <h2>9. Changes to Terms</h2>
+    <p>We reserve the right to update these terms at any time. Changes take effect when posted on this page. Your continued use of the Site after changes constitutes acceptance of the updated terms.</p>
+
+    <h2>10. Contact</h2>
+    <p>Questions about these terms? Contact us:</p>
+    <ul>
+      <li>Email: <a href="mailto:info@castlegaragedoors.com">info@castlegaragedoors.com</a></li>
+      <li>Phone: <a href="${T.PHONE_LINK}">${T.PHONE}</a></li>
+      <li>Mail: Castle Garage Doors &amp; Gates, 1291 Simpson Way Suite D, Escondido, CA 92029</li>
+    </ul>
   </div></div></div>`;
   return { file:'terms.html', title:'Terms of Service | Castle Garage Doors & Gates', description:'Terms of service for Castle Garage Doors & Gates website.', activePage:'', body, schema:T.breadcrumbSchema(crumbs) };
 }
@@ -313,7 +427,7 @@ function notFoundPage() {
       </ul>
     </div>
   </div>`;
-  return { file:'404.html', title:'Page Not Found | Castle Garage Doors & Gates', description:'The page you\'re looking for doesn\'t exist. Contact Castle Garage Doors & Gates at (858) 578-1990.', activePage:'', body };
+  return { file:'404.html', title:'Page Not Found | Castle Garage Doors & Gates', description:'The page you\'re looking for doesn\'t exist. Contact Castle Garage Doors & Gates at (800) 576-1397.', activePage:'', body };
 }
 
 module.exports = [aboutPage(), reviewsPage(), galleryPage(), blogIndex(), contactPage(), specialsPage(), privacyPage(), termsPage(), notFoundPage()];

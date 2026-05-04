@@ -153,7 +153,7 @@ function repairHub() {
   return {
     file: 'services/garage-door-repair/index.html',
     title: 'Garage Door Repair San Diego | Castle Garage Doors & Gates',
-    description: 'Fast garage door repair in San Diego — springs, cables, rollers, panels, tracks & sensors. Same-day & 24/7 emergency service. Call (858) 578-1990.',
+    description: 'Fast garage door repair in San Diego — springs, cables, rollers, panels, tracks & sensors. Same-day & 24/7 emergency service. Call (800) 576-1397.',
     activePage: 'services',
     body,
     schema: T.faqSchema(repairFaqs) + T.serviceSchema('Garage Door Repair', 'Fast, reliable garage door repair including springs, cables, rollers, panels, tracks, drums, and sensors. Same-day and 24/7 emergency service available.') + T.breadcrumbSchema(crumbs)
@@ -166,7 +166,7 @@ const repairPages = [
   servicePage({
     file: 'services/garage-door-repair/spring-replacement.html',
     title: 'Garage Door Spring Replacement San Diego | Castle',
-    description: 'Expert garage door spring replacement in San Diego. Torsion & extension springs. Same-day service. Upfront pricing. Call (858) 578-1990 for a free estimate.',
+    description: 'Expert garage door spring replacement in San Diego. Torsion & extension springs. Same-day service. Upfront pricing. Call (800) 576-1397 for a free estimate.',
     h1: 'Garage Door Spring Replacement',
     subtitle: 'The most common garage door repair — and one you should never attempt yourself.',
     crumbs: repairSubCrumbs('Spring Replacement'),
@@ -208,7 +208,7 @@ const repairPages = [
   servicePage({
     file: 'services/garage-door-repair/cable-replacement.html',
     title: 'Garage Door Cable Replacement San Diego | Castle',
-    description: 'Garage door cable replacement in San Diego. Frayed, broken, or off-drum cables repaired same-day. Licensed & insured. Call (858) 578-1990.',
+    description: 'Garage door cable replacement in San Diego. Frayed, broken, or off-drum cables repaired same-day. Licensed & insured. Call (800) 576-1397.',
     h1: 'Garage Door Cable Replacement',
     subtitle: 'When cables fray or snap, your door becomes unsafe and inoperable.',
     crumbs: repairSubCrumbs('Cable Replacement'),
@@ -244,7 +244,7 @@ const repairPages = [
   servicePage({
     file: 'services/garage-door-repair/roller-replacement.html',
     title: 'Garage Door Roller Replacement San Diego | Castle',
-    description: 'Noisy or stuck garage door? Roller replacement in San Diego. Nylon & steel rollers. Same-day service. Call (858) 578-1990.',
+    description: 'Noisy or stuck garage door? Roller replacement in San Diego. Nylon & steel rollers. Same-day service. Call (800) 576-1397.',
     h1: 'Garage Door Roller Replacement',
     subtitle: 'Worn rollers are the #1 cause of noisy, jerky garage doors.',
     crumbs: repairSubCrumbs('Roller Replacement'),
@@ -282,7 +282,7 @@ const repairPages = [
   servicePage({
     file: 'services/garage-door-repair/panel-replacement.html',
     title: 'Garage Door Panel Replacement San Diego | Castle',
-    description: 'Damaged garage door panels replaced in San Diego. Match existing doors. All materials. Call (858) 578-1990 for free estimate.',
+    description: 'Damaged garage door panels replaced in San Diego. Match existing doors. All materials. Call (800) 576-1397 for free estimate.',
     h1: 'Garage Door Panel Replacement',
     subtitle: 'Restore your door\'s appearance and function without a full replacement.',
     crumbs: repairSubCrumbs('Panel Replacement'),
@@ -314,7 +314,7 @@ const repairPages = [
   servicePage({
     file: 'services/garage-door-repair/track-repair.html',
     title: 'Garage Door Track Repair San Diego | Castle',
-    description: 'Bent or misaligned garage door tracks repaired in San Diego. Door off track? Call (858) 578-1990 for same-day service.',
+    description: 'Bent or misaligned garage door tracks repaired in San Diego. Door off track? Call (800) 576-1397 for same-day service.',
     h1: 'Garage Door Track Repair',
     subtitle: 'Bent, misaligned, or damaged tracks make your door unsafe and unreliable.',
     crumbs: repairSubCrumbs('Track Repair'),
@@ -344,7 +344,7 @@ const repairPages = [
   servicePage({
     file: 'services/garage-door-repair/drum-replacement.html',
     title: 'Garage Door Drum Replacement San Diego | Castle',
-    description: 'Garage door cable drum repair & replacement in San Diego. Cables slipping? Call (858) 578-1990 for expert service.',
+    description: 'Garage door cable drum repair & replacement in San Diego. Cables slipping? Call (800) 576-1397 for expert service.',
     h1: 'Garage Door Drum Replacement',
     subtitle: 'Cable drums are critical for safe, balanced door operation.',
     crumbs: repairSubCrumbs('Drum Replacement'),
@@ -373,7 +373,7 @@ const repairPages = [
   servicePage({
     file: 'services/garage-door-repair/sensor-repair.html',
     title: 'Garage Door Sensor Repair San Diego | Castle',
-    description: 'Garage door sensor repair and alignment in San Diego. Door won\'t close? Call (858) 578-1990. Same-day service available.',
+    description: 'Garage door sensor repair and alignment in San Diego. Door won\'t close? Call (800) 576-1397. Same-day service available.',
     h1: 'Garage Door Sensor Repair',
     subtitle: 'When safety sensors malfunction, your door may refuse to close.',
     crumbs: repairSubCrumbs('Sensor Repair'),
@@ -404,7 +404,7 @@ const repairPages = [
   servicePage({
     file: 'services/garage-door-repair/emergency-repair.html',
     title: '24/7 Emergency Garage Door Repair San Diego | Castle',
-    description: 'Emergency garage door repair available 24/7 in San Diego & Riverside County. Stuck door? Call (858) 578-1990 now.',
+    description: 'Emergency garage door repair available 24/7 in San Diego & Riverside County. Stuck door? Call (800) 576-1397 now.',
     h1: '24/7 Emergency Garage Door Repair',
     subtitle: 'Your garage door emergency can\'t wait until morning. Neither can we.',
     crumbs: repairSubCrumbs('Emergency Repair'),

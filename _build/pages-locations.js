@@ -58,7 +58,7 @@ function locationPage(opts) {
   </div></div>`;
   return {
     file: opts.file, title: `Garage Door Repair ${opts.city}, CA | Castle Garage Doors & Gates`,
-    description: `Garage door and gate services in ${opts.city}, CA. Repair, installation, openers, and gates. Veteran-owned, 40+ years experience. Call (858) 578-1990.`,
+    description: `Garage door and gate services in ${opts.city}, CA. Repair, installation, openers, and gates. Veteran-owned, 40+ years experience. Call (800) 576-1397.`,
     activePage: 'areas', body, schema: T.breadcrumbSchema(crumbs)
   };
 }

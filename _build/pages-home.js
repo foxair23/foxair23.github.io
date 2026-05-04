@@ -11,6 +11,7 @@ function homepage() {
     <div class="hero-content container">
       <div class="hero-badge">${ico.star} VETERAN-OWNED &amp; FAMILY-OPERATED SINCE 1981</div>
       <h1>San Diego Garage Door Repair <span style="color:var(--color-red)">&amp;</span> Gate Experts</h1>
+      <p class="hero-subtitle" style="font-size:1.25rem;font-style:italic;opacity:0.9;margin-bottom:var(--space-2);">San Diego&rsquo;s Knight at the Gate</p>
       <p>Family-owned and veteran-operated for over 40 years. Expert repair, installation, and maintenance from San Diego to Riverside County.</p>
       <div class="hero-buttons">
         <a href="contact.html" class="btn btn-primary" data-track="schedule">Schedule Service</a>
@@ -18,7 +19,7 @@ function homepage() {
       </div>
       <div class="hero-trust">
         <div class="hero-trust-item">${ico.shield} 40+ Years Experience</div>
-        <div class="hero-trust-item">${ico.star} 4.8&#9733; from 200+ Reviews</div>
+        <div class="hero-trust-item">${ico.star} 4.4&#9733; from 210+ Reviews</div>
         <div class="hero-trust-item">${ico.clock} 24/7 Emergency Service</div>
         <div class="hero-trust-item">${ico.check} Free Estimates</div>
       </div>
@@ -84,7 +85,7 @@ function homepage() {
       <div class="section-header">
         <span class="section-label">Customer Reviews</span>
         <h2>What Our Customers Say</h2>
-        <p>Rated 4.8 stars from over 200 reviews across Google and Yelp.</p>
+        <p>Rated 4.4 stars across 210+ reviews on Google and Yelp.</p>
       </div>
       <div class="testimonials-grid">
         <div class="testimonial-card fade-up">
@@ -144,7 +145,7 @@ function homepage() {
   return {
     file: 'index.html',
     title: 'Garage Door Repair & Installation San Diego | Castle Garage Doors & Gates',
-    description: 'Veteran-owned garage door & gate experts serving San Diego to Riverside County since 1981. 24/7 emergency repair, free estimates. Call (858) 578-1990.',
+    description: 'Veteran-owned garage door & gate experts serving San Diego to Riverside County since 1981. 24/7 emergency repair, free estimates. Call (800) 576-1397.',
     activePage: 'home',
     body
   };

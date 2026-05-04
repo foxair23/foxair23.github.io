@@ -63,7 +63,7 @@
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       // TODO: Replace with ServiceTitan booking widget integration
-      alert('Thank you! We received your request and will contact you shortly.\nFor immediate assistance, call (858) 578-1990.');
+      alert('Thank you! We received your request and will contact you shortly.\nFor immediate assistance, call (800) 576-1397.');
       form.reset();
     });
   }

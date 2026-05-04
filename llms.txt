@@ -1,0 +1,48 @@
+# Castle Garage Doors & Gates
+
+> Veteran-owned, family-operated garage door and gate service company serving San Diego to Riverside County since 1981.
+
+## Business Facts
+
+- Name: Castle Garage Doors & Gates
+- Phone: (800) 576-1397
+- Email: info@castlegaragedoors.com
+- Address: 1291 Simpson Way Suite D, Escondido, CA 92029
+- Founded: 1981
+- CSLB License: #1154002 (C-61/D-28 — Door Systems)
+- Hours: Mon–Thu 6:30 AM–4:30 PM, Fri 7:00 AM–4:30 PM, Sat 8:00 AM–12:00 PM, Sun Closed
+- 24/7 Emergency Service Available
+
+## Services
+
+- Garage Door Repair (springs, cables, rollers, panels, tracks, drums, sensors, emergency)
+- Garage Door Installation (residential, commercial, custom)
+- Garage Door Openers (installation, repair, LiftMaster, smart/WiFi)
+- Gate Services (installation, repair, automatic/electric, driveway, security, openers)
+
+## Service Areas
+
+San Diego, Escondido, Oceanside, Carlsbad, Encinitas, Temecula, Murrieta, Fallbrook, Vista, San Marcos, Poway, Corona
+
+## Credentials
+
+- Authorized Home Depot Service Provider (28 stores)
+- Clopay Authorized Dealer
+- BBB A+ Rating
+- Google: 4.4 stars (49 reviews)
+- Yelp: 4.4 stars (161 reviews)
+
+## Website Structure
+
+- Homepage: https://www.castlegaragedoors.com/
+- Services: https://www.castlegaragedoors.com/services/
+- Repair: https://www.castlegaragedoors.com/services/garage-door-repair/
+- Installation: https://www.castlegaragedoors.com/services/garage-door-installation/
+- Openers: https://www.castlegaragedoors.com/services/garage-door-openers/
+- Gates: https://www.castlegaragedoors.com/services/gate-services/
+- Service Areas: https://www.castlegaragedoors.com/service-areas/
+- About: https://www.castlegaragedoors.com/about/
+- Reviews: https://www.castlegaragedoors.com/reviews.html
+- Contact: https://www.castlegaragedoors.com/contact.html
+- Blog: https://www.castlegaragedoors.com/blog/
+- Specials: https://www.castlegaragedoors.com/specials.html
