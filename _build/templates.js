@@ -40,6 +40,7 @@ function svgIcons() {
     instagram: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="white" stroke-width="2"/><circle cx="12" cy="12" r="5" fill="none" stroke="white" stroke-width="2"/></svg>',
     yelp_icon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>',
     google: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.35 11.1h-9.18v2.73h5.51c-.24 1.27-.98 2.34-2.09 3.06v2.54h3.39c1.98-1.82 3.12-4.51 3.12-7.58 0-.52-.05-1.02-.13-1.5z" fill="#4285F4"/><path d="M12.17 22c2.84 0 5.22-.94 6.96-2.57l-3.39-2.54c-.94.63-2.15 1-3.57 1-2.74 0-5.06-1.85-5.89-4.34H2.76v2.62A10.5 10.5 0 0012.17 22z" fill="#34A853"/><path d="M6.28 13.55a6.3 6.3 0 010-4.1V6.83H2.76a10.5 10.5 0 000 9.34l3.52-2.62z" fill="#FBBC05"/><path d="M12.17 5.11c1.55 0 2.94.53 4.03 1.58l3.02-3.02C17.38 1.89 14.99.89 12.17.89A10.5 10.5 0 002.76 6.83l3.52 2.62c.83-2.49 3.15-4.34 5.89-4.34z" fill="#EA4335"/></svg>',
+    nextdoor: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.5 14.5h-2v-4c0-1.38-1.12-2.5-2.5-2.5S9.5 11.12 9.5 12.5v4h-2v-4c0-2.49 2.01-4.5 4.5-4.5s4.5 2.01 4.5 4.5v4z" fill="white"/></svg>',
   };
 }
 
@@ -55,8 +56,35 @@ function header(prefix, activePage) {
         <img src="${prefix}${LOGO_PATH}" alt="Castle Garage Doors And Gates" width="240" height="48">
       </a>
       <nav class="nav-desktop" aria-label="Main navigation">
-        <a href="${prefix}services/index.html"${activePage==='services'?' class="active"':''}>Services</a>
-        <a href="${prefix}service-areas/index.html"${activePage==='areas'?' class="active"':''}>Service Areas</a>
+        <div class="nav-dropdown">
+          <a href="${prefix}services/index.html"${activePage==='services'?' class="active"':''}>Services <span class="nav-arrow">&#9662;</span></a>
+          <div class="mega-menu mega-menu-services">
+            <a href="${prefix}services/garage-door-repair/index.html">Garage Door Repair</a>
+            <a href="${prefix}services/garage-door-installation/index.html">New Garage Doors</a>
+            <a href="${prefix}services/garage-door-openers/index.html">Garage Door Openers</a>
+            <a href="${prefix}services/gate-services/index.html">Gate Installation &amp; Repair</a>
+            <a href="${prefix}services/garage-door-repair/emergency-repair.html">Emergency Repair</a>
+            <a href="${prefix}services/index.html" class="mega-menu-viewall">View All Services &rarr;</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a href="${prefix}service-areas/index.html"${activePage==='areas'?' class="active"':''}>Service Areas <span class="nav-arrow">&#9662;</span></a>
+          <div class="mega-menu mega-menu-areas">
+            <a href="${prefix}service-areas/san-diego.html">San Diego</a>
+            <a href="${prefix}service-areas/escondido.html">Escondido</a>
+            <a href="${prefix}service-areas/oceanside.html">Oceanside</a>
+            <a href="${prefix}service-areas/carlsbad.html">Carlsbad</a>
+            <a href="${prefix}service-areas/encinitas.html">Encinitas</a>
+            <a href="${prefix}service-areas/north-county.html">North County</a>
+            <a href="${prefix}service-areas/temecula.html">Temecula</a>
+            <a href="${prefix}service-areas/murrieta.html">Murrieta</a>
+            <a href="${prefix}service-areas/fallbrook.html">Fallbrook</a>
+            <a href="${prefix}service-areas/bonsall.html">Bonsall</a>
+            <a href="${prefix}service-areas/riverside-county.html">Riverside County</a>
+            <a href="${prefix}service-areas/corona.html">Corona</a>
+            <a href="${prefix}service-areas/index.html" class="mega-menu-viewall">View All Service Areas &rarr;</a>
+          </div>
+        </div>
         <a href="${prefix}about/index.html"${activePage==='about'?' class="active"':''}>About</a>
         <a href="${prefix}reviews.html"${activePage==='reviews'?' class="active"':''}>Reviews</a>
         <a href="${prefix}gallery.html"${activePage==='gallery'?' class="active"':''}>Gallery</a>
@@ -92,8 +120,8 @@ function mobileNav(prefix) {
   return `<nav class="mobile-sticky-nav" aria-label="Mobile quick actions">
     <a href="${prefix}index.html" aria-label="Home">${ico.home} Home</a>
     <a href="${prefix}services/index.html" aria-label="Services">${ico.wrench} Services</a>
-    <a href="${PHONE_LINK}" aria-label="Call now" style="color:var(--color-red);">${phoneIcon()} Call</a>
-    <a href="${prefix}contact.html" aria-label="Schedule" style="color:var(--color-red);">${ico.calendar} Schedule</a>
+    <a href="${PHONE_LINK}" aria-label="Call (800) 576-1397" class="mobile-nav-call">${phoneIcon()} Call</a>
+    <a href="${prefix}contact.html" aria-label="Schedule service" style="color:var(--color-red);">${ico.calendar} Schedule</a>
   </nav>`;
 }
 
@@ -122,10 +150,11 @@ function footer(prefix) {
           <div class="logo"><img src="${prefix}${LOGO_PATH}" alt="Castle Garage Doors And Gates" width="200" height="40"></div>
           <p>Veteran-owned, family-run garage door and gate service company. Proudly serving San Diego to Riverside County since 1981.</p>
           <div class="footer-social">
-            <a href="https://www.facebook.com/castlegaragedoorscorp" target="_blank" rel="noopener" aria-label="Facebook">${ico.facebook}</a>
-            <a href="#" aria-label="Instagram">${ico.instagram}</a>
-            <a href="https://www.yelp.com/biz/castle-garage-doors-escondido" target="_blank" rel="noopener" aria-label="Yelp">${ico.yelp_icon}</a>
-            <a href="https://maps.app.goo.gl/T9DtTWjanN9Zgyte9" target="_blank" rel="noopener" aria-label="Google Reviews">${ico.google}</a>
+            <a href="https://www.facebook.com/castlegaragedoorscorp" target="_blank" rel="noopener" aria-label="Castle Garage Doors on Facebook">${ico.facebook}</a>
+            <a href="#" target="_blank" rel="noopener" aria-label="Castle Garage Doors on Instagram">${ico.instagram}</a>
+            <a href="https://www.yelp.com/biz/castle-garage-doors-escondido" target="_blank" rel="noopener" aria-label="Castle Garage Doors on Yelp">${ico.yelp_icon}</a>
+            <a href="https://maps.app.goo.gl/T9DtTWjanN9Zgyte9" target="_blank" rel="noopener" aria-label="Castle Garage Doors on Google">${ico.google}</a>
+            <a href="#" target="_blank" rel="noopener" aria-label="Castle Garage Doors on Nextdoor">${ico.nextdoor}</a>
           </div>
         </div>
         <div>
