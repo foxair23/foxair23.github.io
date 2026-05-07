@@ -191,7 +191,6 @@ function contactPage() {
   ${T.heroInterior('Contact Us', 'Schedule your service or get a free estimate.', crumbs, prefix)}
   <div class="section"><div class="container">
     <div class="contact-grid">
-      <!-- TODO: Replace with ServiceTitan booking widget integration when available -->
       <form action="#" method="POST" id="contactForm" aria-label="Service request form">
         <div class="form-row">
           <div class="form-group"><label for="name">Full Name *</label><input type="text" id="name" name="name" required placeholder="Your name" autocomplete="name"></div>
@@ -245,43 +244,28 @@ function specialsPage() {
   const prefix = T.getPrefix('specials.html');
   const crumbs = [{label:'Home',href:'index.html'},{label:'Specials'}];
   const body = `
-  ${T.heroInterior('Specials &amp; Coupons', 'Take advantage of our current offers.', crumbs, prefix)}
+  ${T.heroInterior('Specials &amp; Offers', 'Honest pricing from a company you can trust.', crumbs, prefix)}
   <div class="section"><div class="container">
     <div class="specials-grid">
       <div class="special-card">
-        <h3>$25 Off Any Repair</h3>
-        <p>Save $25 on any garage door or gate repair service. New customers welcome.</p>
-        <a href="${prefix}contact.html" class="btn btn-primary">Schedule &amp; Save</a>
-        <p class="fine-print">Mention this offer when you call. Cannot be combined with other offers. Expires 12/31/2026.</p>
-      </div>
-      <div class="special-card">
-        <h3>Free Estimate on New Doors</h3>
-        <p>Considering a new garage door? Get a free in-home estimate with no obligation.</p>
+        <h3>Free Estimates</h3>
+        <p>Every service starts with a free, no-obligation estimate. We&rsquo;ll assess your garage door or gate, explain what&rsquo;s needed, and provide a written quote before any work begins.</p>
         <a href="${prefix}contact.html" class="btn btn-primary">Get Free Estimate</a>
-        <p class="fine-print">Includes measurement, style consultation, and written quote. No pressure, no obligation.</p>
       </div>
       <div class="special-card">
-        <h3>$50 Off Opener Installation</h3>
-        <p>Save $50 when you purchase and install a new LiftMaster garage door opener.</p>
-        <a href="${prefix}contact.html" class="btn btn-primary">Claim Offer</a>
-        <p class="fine-print">Valid on LiftMaster openers only. Cannot be combined with other offers. Expires 12/31/2026.</p>
+        <h3>Veteran-Owned Heritage</h3>
+        <p>As a veteran-owned, family-operated business since 1981, we bring military discipline to every job: on-time arrivals, transparent pricing, and work we stand behind.</p>
+        <a href="${prefix}about/index.html" class="btn btn-secondary">About Castle</a>
       </div>
       <div class="special-card">
-        <h3>10% Senior &amp; Military Discount</h3>
-        <p>We proudly offer 10% off all services for seniors (65+) and active/retired military.</p>
-        <a href="${T.PHONE_LINK}" class="btn btn-primary">Call to Redeem</a>
-        <p class="fine-print">Valid ID required. Cannot be combined with other offers. Up to $100 maximum discount.</p>
-      </div>
-      <div class="special-card">
-        <h3>$89 Garage Door Tune-Up</h3>
-        <p>Complete 25-point garage door inspection, lubrication, balance test, and safety check. Prevent costly breakdowns.</p>
-        <a href="${prefix}contact.html" class="btn btn-primary">Book Tune-Up</a>
-        <p class="fine-print">Includes visual inspection of springs, cables, rollers, and hardware. Parts extra if needed. Expires 12/31/2026.</p>
+        <h3>Upfront Pricing</h3>
+        <p>No hidden fees, no surprise charges, no upselling. You&rsquo;ll know exactly what a repair or installation costs before we start. That&rsquo;s been our policy for over 40 years.</p>
+        <a href="${T.PHONE_LINK}" class="btn btn-primary">Call ${T.PHONE}</a>
       </div>
     </div>
     <div style="margin-top:var(--space-12);text-align:center;padding:var(--space-8);background:var(--color-surface);border-radius:var(--radius);">
-      <h3>How to Redeem</h3>
-      <p style="color:var(--color-text-secondary);max-width:600px;margin:var(--space-2) auto var(--space-4);">Mention the offer when you call or note it in your online service request. Our team will apply the discount to your invoice. Only one offer per service visit.</p>
+      <h3>Ask About Current Offers</h3>
+      <p style="color:var(--color-text-secondary);max-width:600px;margin:var(--space-2) auto var(--space-4);">Call us or submit a service request to ask about any current promotions or seasonal specials.</p>
       <a href="${T.PHONE_LINK}" class="btn btn-primary">Call ${T.PHONE}</a>
     </div>
   </div></div>`;

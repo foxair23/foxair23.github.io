@@ -151,10 +151,8 @@ function footer(prefix) {
           <p>Veteran-owned, family-run garage door and gate service company. Proudly serving San Diego to Riverside County since 1981.</p>
           <div class="footer-social">
             <a href="https://www.facebook.com/castlegaragedoorscorp" target="_blank" rel="noopener" aria-label="Castle Garage Doors on Facebook">${ico.facebook}</a>
-            <a href="#" target="_blank" rel="noopener" aria-label="Castle Garage Doors on Instagram">${ico.instagram}</a>
             <a href="https://www.yelp.com/biz/castle-garage-doors-escondido" target="_blank" rel="noopener" aria-label="Castle Garage Doors on Yelp">${ico.yelp_icon}</a>
             <a href="https://maps.app.goo.gl/T9DtTWjanN9Zgyte9" target="_blank" rel="noopener" aria-label="Castle Garage Doors on Google">${ico.google}</a>
-            <a href="#" target="_blank" rel="noopener" aria-label="Castle Garage Doors on Nextdoor">${ico.nextdoor}</a>
           </div>
         </div>
         <div>
