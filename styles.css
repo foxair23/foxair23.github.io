@@ -3,8 +3,33 @@
    Design Guide: Black + Red brand, clean/modern, mobile-first
    =================================================================== */
 
-/* ===== FONTS ===== */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap');
+/* ===== FONTS =====
+   Self-hosted from assets/fonts/. Variable fonts give us every weight 100–1000
+   from a single file, normal + italic. See colors_and_type.css for tokens. */
+@font-face {
+  font-family: 'DM Sans';
+  src: url('assets/fonts/DMSans-VariableFont.ttf') format('truetype-variations'),
+       url('assets/fonts/DMSans-VariableFont.ttf') format('truetype');
+  font-weight: 100 1000; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'DM Sans';
+  src: url('assets/fonts/DMSans-Italic-VariableFont.ttf') format('truetype-variations'),
+       url('assets/fonts/DMSans-Italic-VariableFont.ttf') format('truetype');
+  font-weight: 100 1000; font-style: italic; font-display: swap;
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  src: url('assets/fonts/SourceSans3-VariableFont.ttf') format('truetype-variations'),
+       url('assets/fonts/SourceSans3-VariableFont.ttf') format('truetype');
+  font-weight: 100 1000; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Source Sans 3';
+  src: url('assets/fonts/SourceSans3-Italic-VariableFont.ttf') format('truetype-variations'),
+       url('assets/fonts/SourceSans3-Italic-VariableFont.ttf') format('truetype');
+  font-weight: 100 1000; font-style: italic; font-display: swap;
+}
 
 /* ===== CSS VARIABLES ===== */
 :root {
@@ -266,11 +291,11 @@ p { max-width: 680px; }
 }
 .hero-bg {
   position: absolute; inset: 0; background-size: cover; background-position: center;
-  opacity: 0.55;
+  opacity: 1;
 }
 .hero-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to right, rgba(15,15,15,0.82) 0%, rgba(15,15,15,0.45) 55%, rgba(15,15,15,0.15) 100%);
+  background: linear-gradient(to right, rgba(15,15,15,0.88) 0%, rgba(15,15,15,0.65) 22%, rgba(15,15,15,0.20) 42%, rgba(15,15,15,0) 60%);
 }
 .hero-content { position: relative; z-index: 2; padding: var(--space-10) 0 var(--space-12); color: #FFF; }
 .hero-heritage {
@@ -786,9 +811,94 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   outline: 2px solid var(--color-red); outline-offset: 2px;
 }
 
+/* ===== CTA BANNER — DARK (homepage, with Knight mascot) ===== */
+.cta-banner-dark {
+  position: relative; background: var(--color-bg-dark); color: #FFF;
+  border-top: 3px solid var(--color-red); overflow: hidden;
+  display: grid; grid-template-columns: 1fr auto; align-items: center;
+  gap: var(--space-8); padding: var(--space-16) 0;
+}
+.cta-banner-dark::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.025) 0 2px, transparent 2px 14px);
+}
+.cta-banner-dark .container {
+  display: grid; grid-template-columns: 1fr auto; align-items: center; gap: var(--space-8);
+}
+.cta-dark-copy { position: relative; }
+.cta-dark-copy .section-label { color: var(--color-red); }
+.cta-dark-copy h2 { color: #FFF; margin-bottom: var(--space-3); }
+.cta-dark-copy p { color: rgba(255,255,255,0.78); margin-bottom: var(--space-6); }
+.cta-dark-copy .btn-group { display: flex; flex-wrap: wrap; gap: 12px; }
+.cta-dark-mascot {
+  position: relative; z-index: 2; width: 200px; height: auto; display: block;
+  flex-shrink: 0; filter: drop-shadow(0 8px 24px rgba(0,0,0,0.45));
+}
+@media (max-width: 767px) {
+  .cta-banner-dark .container { grid-template-columns: 1fr; }
+  .cta-dark-mascot { display: none; }
+}
+@media (min-width: 768px) {
+  .cta-dark-mascot { width: 220px; }
+}
+
+/* ===== PARTNER LOGOS (Certified & Trusted section) ===== */
+.partner-logos-section {
+  background: var(--color-bg-white); padding: var(--space-12) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.partner-logos-section .section-header { margin-bottom: var(--space-8); }
+.partner-logos-grid {
+  display: flex; align-items: center; justify-content: center;
+  flex-wrap: wrap; gap: var(--space-8) var(--space-12);
+}
+.partner-logos-grid img {
+  height: 54px; width: auto; object-fit: contain;
+  filter: grayscale(0.15); transition: filter 0.2s;
+}
+.partner-logos-grid img:hover { filter: none; }
+.partner-logos-grid .partner-lm { height: 28px; }
+.partner-logos-grid .partner-hd { height: 60px; }
+.partner-logos-grid .partner-genie { height: 48px; }
+
+/* ===== 404 PAGE (full mascot) ===== */
+.not-found-mascot {
+  width: 220px; height: auto; margin: 0 auto var(--space-6);
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.15));
+}
+
+/* ===== BLOG BYLINE (48px mascot circle) ===== */
+.blog-byline {
+  display: flex; align-items: center; gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+.blog-byline-avatar {
+  width: 48px; height: 48px; border-radius: 50%; overflow: hidden;
+  border: 2px solid var(--color-border); flex-shrink: 0;
+}
+.blog-byline-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.blog-byline-meta { font-size: var(--text-small); color: var(--color-text-muted); }
+.blog-byline-name { font-family: var(--font-display); font-weight: 600; color: var(--color-primary); }
+
+/* ===== FOOTER KNIGHT ===== */
+.footer-about-inner {
+  display: grid; grid-template-columns: auto 1fr; gap: var(--space-4); align-items: start;
+}
+.footer-knight {
+  width: 72px; height: auto; display: block;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.45)); margin-top: 4px;
+}
+
+/* ===== SERVICE AREA HERO PHOTO ===== */
+.area-hero-photo {
+  width: 100%; max-height: 300px; object-fit: cover;
+  border-radius: var(--radius-lg); margin-bottom: var(--space-8);
+  display: block;
+}
+
 /* ===== PRINT ===== */
 @media print {
-  .header, .footer, .mobile-sticky-nav, .floating-cta, .cta-banner { display: none; }
+  .header, .footer, .mobile-sticky-nav, .floating-cta, .cta-banner, .cta-banner-dark { display: none; }
   body { background: #FFF; padding: 0; }
   .section { padding: 24px 0; }
 }
