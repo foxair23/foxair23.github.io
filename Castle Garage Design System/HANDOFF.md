@@ -6,20 +6,19 @@
 
 ## How to use this package with Claude Code
 
-1. Unzip this folder somewhere on disk.
-2. In Claude Code, open your existing site repo (the GitHub repo for `castlegaragedoors.com` — `foxair23/foxair23.github.io`).
-3. Drop this whole `castle-design-system/` folder into the repo root **or** keep it adjacent and reference it.
-4. Open Claude Code and paste this exact prompt:
+**Option A — Browser (easiest, no install needed)**
 
-   > I have a design-system handoff in `./castle-design-system/`. Please:
-   > 1. Read `HANDOFF.md` and `README.md` first.
-   > 2. Copy `assets/` into the repo root (`logo.png`, `partners/`, `photos/`, `fonts/`, `icons/`, `mascot.webp`).
-   > 3. Replace the existing `styles.css` and `colors_and_type.css` with the versions in the handoff folder.
-   > 4. Walk page by page through the existing site (`index.html`, `contact.html`, `about/index.html`, `services/...`, `service-areas/...`, `blog/...`) and update markup so each section matches the design references in `preview/` and the React kit in `ui_kits/website/`.
-   > 5. Wire up the partner logos in the trust strip, the mascot in the CTA / footer / 404 / about page / blog byline, and the city photos on each service-area page.
-   > 6. After each page, show me a diff before moving on.
+1. On <https://github.com> open your `foxair23/foxair23.github.io` repo and use **Add file → Upload files** to drop this whole folder in. (Name it `Castle Garage Design System/` to match the rest of these docs.)
+2. Open <https://claude.ai/code> in your browser, connect it to that repo.
+3. Paste this prompt:
 
-That's it. Claude Code will read the references and execute against the existing repo.
+   > Read `Castle Garage Design System/HANDOFF.md` and `Castle Garage Design System/README.md` first. Then walk page by page through the existing site (`index.html`, `contact.html`, `about/index.html`, `services/...`, `service-areas/...`, `blog/...`) and update each one to match the design references in `Castle Garage Design System/preview/` and the React kit in `Castle Garage Design System/ui_kits/website/`. Copy `Castle Garage Design System/assets/` into the repo root (or reference the existing path — your call), and replace the existing `styles.css` and `colors_and_type.css` with the versions in the handoff folder. Wire up the partner logos in the trust strip, the mascot in the CTA / footer / 404 / about / blog byline, and the city photos on each service-area page. After each page, show me a diff and wait for my OK before moving on.
+
+4. When Claude Code is done, it opens a pull request you merge from the GitHub web UI.
+
+**Option B — Local (if you have the repo cloned)**
+
+Same prompt, just run it inside the CLI version of Claude Code pointed at your local clone of the repo with the `Castle Garage Design System/` folder dropped in.
 
 ---
 
@@ -152,8 +151,9 @@ The Knight (`assets/mascot.webp`) is a flavor element, not a hero element.
 
 ## Open items / things the developer may need to add
 
-- **Gallery photos** — `gallery.html` still uses Unsplash stock URLs. Real before/after job photos need to drop into `assets/photos/gallery/` and replace those.
-- **About / team portrait** — `preview/page-about-hero.html` uses the mascot. If you have a real owner/family/crew portrait, it would go in `assets/photos/team/` and replace the mascot in the About hero.
+- **Asset paths.** The previews reference assets via `../assets/...`. When Claude Code wires the same images into production pages at the repo root, paths become `./assets/...`. Adjust accordingly.
+- **Gallery photos** — `gallery.html` still uses Unsplash stock URLs. Real before/after job photos should drop into `assets/photos/gallery/` and replace those.
+- **About / team portrait** — `preview/page-about-hero.html` uses the mascot as a stand-in. If you have a real owner/family/crew portrait, it would go in `assets/photos/team/` and replace the mascot in the About hero.
 - The `assets/fonts/` files are `.ttf` variable fonts (~250 KB each). Converting to `.woff2` would shrink them ~30% — optional optimization.
 
 ---
