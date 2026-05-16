@@ -882,7 +882,6 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .partners-logos { display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap; max-width: 1100px; margin: 0 auto; }
 .partners-logos img { max-width: 100%; width: auto; object-fit: contain; display: block; }
 .partners-logos .clopay-mad { height: 96px; }
-.partners-logos .clopay-gb  { height: 60px; }
 .partners-logos .liftmaster { height: 34px; }
 .partners-logos .genie      { height: 58px; }
 .partners-logos .hd         { height: 72px; }
@@ -891,7 +890,6 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .partners h2 { font-size: 22px; }
   .partners-logos { gap: 28px; }
   .partners-logos .clopay-mad { height: 72px; }
-  .partners-logos .clopay-gb  { height: 44px; }
   .partners-logos .liftmaster { height: 26px; }
   .partners-logos .genie      { height: 44px; }
   .partners-logos .hd         { height: 54px; }
