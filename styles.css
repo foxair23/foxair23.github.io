@@ -875,7 +875,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 
 /* ===== TRUSTED PARTNERS WALL ===== */
 .partners { padding: 64px 24px; background: var(--color-bg-white); text-align: center; border-bottom: 1px solid var(--color-border-light); }
-.partners .eyebrow { font-size: 13px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--color-red); font-weight: 800; margin: 0 0 8px; }
+.partners .eyebrow { font-size: 13px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--color-red); font-weight: 800; margin: 0 auto 8px; display: block; text-align: center; }
 .partners h2 { font-family: var(--font-display); font-size: 30px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.01em; color: var(--color-text-primary); margin: 0 0 12px; }
 .partners-sub { font-size: 16px; line-height: 1.55; color: var(--color-text-secondary); max-width: 680px; margin: 0 auto 32px; }
 .partners-sub strong { color: var(--color-text-primary); }
