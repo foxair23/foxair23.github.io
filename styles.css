@@ -359,8 +359,8 @@ p { max-width: 680px; }
 /* ===== TRUST STRIP (below hero) ===== */
 .trust-strip { background: var(--color-surface); padding: var(--space-3) 0; border-bottom: 1px solid var(--color-border); overflow-x: auto; }
 .trust-strip-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--space-2) var(--space-5); padding: var(--space-1) 0; }
-.trust-strip-item { display: flex; align-items: center; gap: 6px; font-size: var(--text-small); font-weight: 600; color: var(--color-text-secondary); padding: 4px 0; white-space: nowrap; }
-.trust-strip-item svg { width: 16px; height: 16px; fill: none; stroke: var(--color-red); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+.trust-strip-item { display: flex; align-items: center; gap: 7px; font-size: var(--text-body-sm); font-weight: 600; color: var(--color-text-secondary); padding: 4px 0; white-space: nowrap; }
+.trust-strip-item svg { width: 22px; height: 22px; fill: none; stroke: var(--color-red); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
 
 /* ===== SERVICE PILLARS ===== */
 .services-pillars { display: grid; grid-template-columns: 1fr; gap: var(--space-6); }
@@ -874,7 +874,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 
 /* ===== 404 PAGE (full mascot) ===== */
 .not-found-mascot {
-  width: 220px; height: auto; margin: 0 auto var(--space-6);
+  width: 280px; height: auto; margin: 0 auto var(--space-6);
   filter: drop-shadow(0 8px 24px rgba(0,0,0,0.15));
 }
 
@@ -884,8 +884,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   margin-bottom: var(--space-6);
 }
 .blog-byline-avatar {
-  width: 48px; height: 48px; border-radius: 50%; overflow: hidden;
-  border: 2px solid var(--color-border); flex-shrink: 0;
+  width: 52px; height: 52px; border-radius: 50%; overflow: hidden;
+  border: 2px solid var(--color-red); flex-shrink: 0;
 }
 .blog-byline-avatar img { width: 100%; height: 100%; object-fit: cover; }
 .blog-byline-meta { font-size: var(--text-small); color: var(--color-text-muted); }
