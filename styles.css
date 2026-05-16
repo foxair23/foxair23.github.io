@@ -873,14 +873,29 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .partner-logos-grid .partner-hd { height: 60px; }
 .partner-logos-grid .partner-genie { height: 48px; }
 
-/* ===== PARTNER WALL (replaces trust strip on homepage) ===== */
-.partner-wall { background: #fff; padding: 48px 0; text-align: center; border-bottom: 1px solid var(--color-border); }
-.partner-wall-eyebrow { font-size: 13px; text-transform: uppercase; letter-spacing: .16em; color: var(--color-red); font-weight: 800; margin: 0 0 6px; }
-.partner-wall-heading { font-family: var(--font-display); font-size: clamp(22px, 3vw, 30px); font-weight: 900; text-transform: uppercase; letter-spacing: .02em; color: var(--color-text-primary); margin: 0 0 12px; }
-.partner-wall-lede { font-size: var(--text-body); line-height: 1.55; color: var(--color-text-secondary); max-width: 680px; margin: 0 auto 32px; }
-.partner-wall-grid { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 16px; }
-.partner-tile { background: #fff; border: 1px solid var(--color-border); border-radius: 10px; height: 112px; display: flex; align-items: center; justify-content: center; padding: 14px; flex: 1 1 140px; max-width: 200px; }
-.partner-tile img { max-width: 100%; width: auto; height: auto; object-fit: contain; display: block; }
+/* ===== TRUSTED PARTNERS WALL ===== */
+.partners { padding: 64px 24px; background: var(--color-bg-white); text-align: center; border-bottom: 1px solid var(--color-border-light); }
+.partners .eyebrow { font-size: 13px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--color-red); font-weight: 800; margin: 0 0 8px; }
+.partners h2 { font-family: var(--font-display); font-size: 30px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.01em; color: var(--color-text-primary); margin: 0 0 12px; }
+.partners-sub { font-size: 16px; line-height: 1.55; color: var(--color-text-secondary); max-width: 680px; margin: 0 auto 32px; }
+.partners-sub strong { color: var(--color-text-primary); }
+.partners-logos { display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap; max-width: 1100px; margin: 0 auto; }
+.partners-logos img { max-width: 100%; width: auto; object-fit: contain; display: block; }
+.partners-logos .clopay-mad { height: 96px; }
+.partners-logos .clopay-gb  { height: 60px; }
+.partners-logos .liftmaster { height: 34px; }
+.partners-logos .genie      { height: 58px; }
+.partners-logos .hd         { height: 72px; }
+@media (max-width: 768px) {
+  .partners { padding: 40px 20px; }
+  .partners h2 { font-size: 22px; }
+  .partners-logos { gap: 28px; }
+  .partners-logos .clopay-mad { height: 72px; }
+  .partners-logos .clopay-gb  { height: 44px; }
+  .partners-logos .liftmaster { height: 26px; }
+  .partners-logos .genie      { height: 44px; }
+  .partners-logos .hd         { height: 54px; }
+}
 
 /* ===== 404 PAGE (full mascot) ===== */
 .not-found-mascot {
