@@ -184,15 +184,13 @@ p { max-width: 680px; }
 .header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   background: var(--color-bg-white); height: var(--header-height);
-  box-shadow: var(--shadow-sm); transition: height 0.3s ease;
+  box-shadow: var(--shadow-sm);
 }
-.header.scrolled { height: 64px; box-shadow: var(--shadow-md); }
 .header-inner {
   max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
   display: flex; align-items: center; justify-content: space-between; height: 100%;
 }
 .logo img { height: 40px; width: auto; }
-.header.scrolled .logo img { height: 34px; }
 .nav-desktop { display: none; }
 .nav-desktop a {
   font-family: var(--font-display); font-size: var(--text-body-sm); font-weight: 600;
@@ -277,7 +275,6 @@ p { max-width: 680px; }
   .mobile-sticky-nav { display: none; }
   .floating-cta { display: block; }
   .logo img { height: 48px; }
-  .header.scrolled .logo img { height: 40px; }
 }
 
 /* ===== PAGE TOP OFFSET ===== */

@@ -5,18 +5,11 @@
 (function() {
   'use strict';
 
-  // ===== HEADER SCROLL =====
-  var header = document.getElementById('header');
+  // ===== FLOATING CTA (fades in after scroll) =====
   var floatingCta = document.getElementById('floatingCta');
-  if (header) {
+  if (floatingCta) {
     window.addEventListener('scroll', function() {
-      if (window.scrollY > 80) {
-        header.classList.add('scrolled');
-        if (floatingCta) floatingCta.style.opacity = '1';
-      } else {
-        header.classList.remove('scrolled');
-        if (floatingCta) floatingCta.style.opacity = '0';
-      }
+      floatingCta.style.opacity = window.scrollY > 80 ? '1' : '0';
     }, { passive: true });
   }
 
