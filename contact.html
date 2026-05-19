@@ -115,39 +115,15 @@
   </section>
   <div class="section"><div class="container">
     <div class="contact-grid">
-      <form action="#" method="POST" id="contactForm" aria-label="Service request form">
-        <div class="form-row">
-          <div class="form-group"><label for="name">Full Name *</label><input type="text" id="name" name="name" required placeholder="Your name" autocomplete="name"></div>
-          <div class="form-group"><label for="phone">Phone Number *</label><input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567" autocomplete="tel"></div>
-        </div>
-        <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email"></div>
-        <div class="form-group"><label for="service">Service Needed *</label>
-          <select id="service" name="service" required>
-            <option value="">Select a service...</option>
-            <option value="repair">Garage Door Repair</option>
-            <option value="installation">New Garage Door Installation</option>
-            <option value="opener">Garage Door Opener</option>
-            <option value="gate">Gate Installation or Repair</option>
-            <option value="maintenance">Maintenance / Tune-Up</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-        <div class="form-group"><label for="date">Preferred Date</label><input type="date" id="date" name="date"></div>
-        <div class="form-group"><label for="message">Brief Description</label><textarea id="message" name="message" placeholder="Tell us about your garage door or gate issue..."></textarea></div>
-        <div class="form-group"><label for="referral">How Did You Hear About Us?</label>
-          <select id="referral" name="referral">
-            <option value="">Select...</option>
-            <option value="google">Google Search</option>
-            <option value="yelp">Yelp</option>
-            <option value="homedepot">Home Depot</option>
-            <option value="referral">Friend / Family Referral</option>
-            <option value="repeat">Returning Customer</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-        <button type="submit" class="btn btn-primary btn-full" style="margin-top:var(--space-2);">Request Free Estimate</button>
-        <p style="font-size:var(--text-small);color:var(--color-text-muted);margin-top:var(--space-2);text-align:center;">We respond within 1 business hour during operating hours.</p>
-      </form>
+      <div class="scheduler-embed">
+        <iframe
+          src="https://admin.castlegaragedoors.com/embed/scheduler?key=f28c4e5e9db853630748e3274f1636687478fae014a1694a923f219c76f412ba"
+          style="width:100%;border:none;min-height:600px"
+          allow="payment"
+          loading="lazy"
+          title="Book a Service Appointment"
+        ></iframe>
+      </div>
       <div class="contact-info-card">
         <h3>Get In Touch</h3>
         <div class="contact-info-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg><p><strong>Call Us</strong><a href="tel:8005761397">(800) 576-1397</a></p></div>
@@ -219,5 +195,13 @@
     <a href="./contact.html" class="btn btn-primary" data-track="schedule"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg> Schedule Service</a>
   </div>
   <script src="./script.js"></script>
+  <script>
+    window.addEventListener('message', function(e) {
+      if (e.data && e.data.type === 'castle-scheduler-height') {
+        var f = document.querySelector('iframe[src*="castlegaragedoors.com/embed/scheduler"]');
+        if (f) f.style.minHeight = e.data.height + 'px';
+      }
+    });
+  </script>
 </body>
 </html>
