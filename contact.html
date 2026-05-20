@@ -117,7 +117,7 @@
     <div class="contact-grid">
       <div class="scheduler-embed">
         <iframe
-          src="https://admin.castlegaragedoors.com/embed/scheduler?key=f28c4e5e9db853630748e3274f1636687478fae014a1694a923f219c76f412ba"
+          src="https://castleadmin.vercel.app/embed/scheduler?key=f28c4e5e9db853630748e3274f1636687478fae014a1694a923f219c76f412ba"
           style="width:100%;border:none;min-height:600px"
           allow="payment"
           loading="lazy"
@@ -198,7 +198,7 @@
   <script>
     window.addEventListener('message', function(e) {
       if (e.data && e.data.type === 'castle-scheduler-height') {
-        var f = document.querySelector('iframe[src*="castlegaragedoors.com/embed/scheduler"]');
+        var f = document.querySelector('iframe[src*="castleadmin.vercel.app"]');
         if (f) f.style.minHeight = e.data.height + 'px';
       }
     });
