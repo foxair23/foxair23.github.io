@@ -933,3 +933,5 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   body { background: #FFF; padding: 0; }
   .section { padding: 24px 0; }
 }
+
+@keyframes spin { to { transform: rotate(360deg); } }
