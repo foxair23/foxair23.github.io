@@ -116,13 +116,18 @@
   </section>
   <div class="section"><div class="container">
     <div class="contact-grid">
-      <div class="scheduler-embed">
+      <div class="scheduler-embed" style="position:relative;">
+        <div id="schedulerLoading" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:#f9f9f9;border-radius:var(--radius);min-height:600px;">
+          <div style="width:40px;height:40px;border:3px solid var(--color-border);border-top-color:var(--color-red);border-radius:50%;animation:spin .8s linear infinite;"></div>
+          <p style="font-size:var(--text-small);color:var(--color-text-muted);margin:0;">Loading scheduler&hellip;</p>
+        </div>
         <iframe
+          id="schedulerFrame"
           src="https://castleadmin.vercel.app/embed/scheduler?key=f28c4e5e9db853630748e3274f1636687478fae014a1694a923f219c76f412ba"
-          style="width:100%;border:none;min-height:600px"
+          style="width:100%;border:none;min-height:600px;opacity:0;transition:opacity .3s;"
           allow="payment"
-
           title="Book a Service Appointment"
+          onload="this.style.opacity='1';var l=document.getElementById('schedulerLoading');if(l)l.style.display='none';"
         ></iframe>
       </div>
       <div class="contact-info-card">
