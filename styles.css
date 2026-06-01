@@ -177,6 +177,10 @@ p { max-width: 680px; }
   background: transparent; color: #FFF; border: 2px solid #FFF;
 }
 .btn-outline-white:hover { background: rgba(255,255,255,0.15); }
+.btn-dark {
+  background: var(--color-primary); color: #FFF; border: 2px solid #FFF;
+}
+.btn-dark:hover { background: #333; }
 .btn-sm { padding: 10px 20px; font-size: var(--text-body-sm); }
 .btn-full { width: 100%; }
 
@@ -241,6 +245,8 @@ p { max-width: 680px; }
   border-bottom: none; padding: 14px 20px;
 }
 .mobile-menu .btn + .btn { margin-top: var(--space-3); }
+.mobile-menu .btn-primary { color: #FFF; }
+.mobile-menu .btn-dark { color: #FFF; }
 
 /* Mobile Sticky Nav */
 .mobile-sticky-nav {
