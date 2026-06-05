@@ -848,7 +848,7 @@ p { max-width: 680px; }
 .timeline::before { content: ''; position: absolute; left: 14px; top: 0; bottom: 0; width: 2px; background: var(--color-red); }
 .timeline-item { position: relative; margin-bottom: var(--space-8); }
 .timeline-item::before { content: ''; position: absolute; left: -33px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--color-red); border: 2px solid var(--color-bg); }
-.timeline-year { font-weight: 700; color: var(--color-red); font-size: var(--text-body-sm); text-transform: uppercase; letter-spacing: 0.05em; }
+.timeline-year { font-weight: 700; color: var(--color-red); font-size: var(--text-body-sm); letter-spacing: 0.05em; }
 .timeline-content h4 { margin: var(--space-1) 0 var(--space-1); font-size: var(--text-body); }
 .timeline-content p { color: var(--color-text-secondary); font-size: var(--text-body-sm); margin: 0; }
 
