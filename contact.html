@@ -14,7 +14,7 @@
   <meta property="og:site_name" content="Castle Garage Doors & Gates">
   <meta property="og:image" content="https://www.castlegaragedoors.com/logo.png">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="preconnect" href="https://castleadmin.vercel.app">
+  <link rel="preconnect" href="https://hq.castlegaragedoors.com">
   <link rel="stylesheet" href="./colors_and_type.css">
   <link rel="stylesheet" href="./styles.css">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -127,7 +127,7 @@
         </div>
         <iframe
           id="schedulerFrame"
-          src="https://castleadmin.vercel.app/embed/scheduler?key=f28c4e5e9db853630748e3274f1636687478fae014a1694a923f219c76f412ba"
+          src="https://hq.castlegaragedoors.com/embed/scheduler?key=f28c4e5e9db853630748e3274f1636687478fae014a1694a923f219c76f412ba"
           style="width:100%;border:none;min-height:600px;opacity:0;transition:opacity .3s;"
           allow="payment"
           title="Book a Service Appointment"
@@ -206,7 +206,7 @@
   <script>
     window.addEventListener('message', function(e) {
       if (e.data && e.data.type === 'castle-scheduler-height') {
-        var f = document.querySelector('iframe[src*="castleadmin.vercel.app"]');
+        var f = document.querySelector('iframe[src*="hq.castlegaragedoors.com"]');
         if (f) f.style.minHeight = e.data.height + 'px';
       }
     });
