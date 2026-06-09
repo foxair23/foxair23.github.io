@@ -36,6 +36,13 @@
     gtag('js', new Date());
     gtag('config', 'G-MGQ68MY9W3');
   </script>
+  <script>
+    window.addEventListener('message', function(e) {
+      if (e.data && e.data.type === 'castle-scheduler-event') {
+        gtag('event', e.data.event, e.data.params || {});
+      }
+    });
+  </script>
 </head>
 <body>
   <header class="header" id="header" role="banner">
