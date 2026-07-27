@@ -753,6 +753,7 @@ p { max-width: 680px; }
   padding: var(--space-4) 0; text-align: center;
   font-size: var(--text-small); color: rgba(255,255,255,0.4);
 }
+.footer-bottom a { font-size: var(--text-small); color: rgba(255,255,255,0.4); }
 .footer-badges {
   display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-3);
   margin-top: var(--space-3);
