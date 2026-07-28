@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /answerforce
+Disallow: /answerforce/
+Disallow: /sfi
+Disallow: /sfi/
 
 Sitemap: https://www.castlegaragedoors.com/sitemap.xml
