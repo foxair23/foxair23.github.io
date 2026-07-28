@@ -117,19 +117,13 @@
   <div class="section">
     <div class="container">
       <div class="contact-grid">
-        <div class="scheduler-embed" style="position:relative;">
-          <!-- WIDGET PLACEHOLDER: replace this iframe with the scheduling widget code -->
-          <div id="schedulerLoading" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:#f9f9f9;border-radius:var(--radius);min-height:600px;">
-            <div style="width:40px;height:40px;border:3px solid var(--color-border);border-top-color:var(--color-red);border-radius:50%;animation:spin .8s linear infinite;"></div>
-            <p style="font-size:var(--text-small);color:var(--color-text-muted);margin:0;">Loading scheduler&hellip;</p>
-          </div>
+        <div class="scheduler-embed">
           <iframe
-            id="schedulerFrame"
-            src="https://hq.castlegaragedoors.com/embed/scheduler?key=f28c4e5e9db853630748e3274f1636687478fae014a1694a923f219c76f412ba"
-            style="width:100%;border:none;min-height:600px;opacity:0;transition:opacity .3s;"
+            src="https://hq.castlegaragedoors.com/embed/scheduler?key=7c1e9ca9b543473f9b24a82c5a26607682412131ea604d139aaac4c3bf8ed9c0"
+            style="width:100%;border:none;min-height:600px"
             allow="payment"
+            loading="lazy"
             title="Book a Service Appointment"
-            onload="this.style.opacity='1';var l=document.getElementById('schedulerLoading');if(l)l.style.display='none';"
           ></iframe>
         </div>
         <div class="contact-info-card">
@@ -197,7 +191,7 @@
   <script>
     window.addEventListener('message', function(e) {
       if (e.data && e.data.type === 'castle-scheduler-height') {
-        var f = document.querySelector('iframe[src*="hq.castlegaragedoors.com"]');
+        var f = document.querySelector('iframe[src*="castle-scheduler"]');
         if (f) f.style.minHeight = e.data.height + 'px';
       }
     });
