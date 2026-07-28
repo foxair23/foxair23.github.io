@@ -120,7 +120,7 @@
         <div class="scheduler-embed">
           <iframe
             src="https://hq.castlegaragedoors.com/embed/scheduler?key=7c1e9ca9b543473f9b24a82c5a26607682412131ea604d139aaac4c3bf8ed9c0"
-            style="width:100%;border:none;min-height:600px"
+            style="width:100%;border:none;min-height:900px"
             allow="payment"
             loading="lazy"
             title="Book a Service Appointment"
@@ -191,7 +191,7 @@
   <script>
     window.addEventListener('message', function(e) {
       if (e.data && e.data.type === 'castle-scheduler-height') {
-        var f = document.querySelector('iframe[src*="castle-scheduler"]');
+        var f = document.querySelector('iframe[src*="hq.castlegaragedoors.com"]');
         if (f) f.style.minHeight = e.data.height + 'px';
       }
     });
