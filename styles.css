@@ -930,6 +930,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .partners-logos .liftmaster { height: 34px; }
 .partners-logos .genie      { height: 58px; }
 .partners-logos .hd         { height: 72px; }
+.partners-logos .amarr      { height: 88px; }
 @media (max-width: 768px) {
   .partners { padding: 40px 20px; }
   .partners h2 { font-size: 22px; }
@@ -938,6 +939,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .partners-logos .liftmaster { height: 26px; }
   .partners-logos .genie      { height: 44px; }
   .partners-logos .hd         { height: 54px; }
+.partners-logos .amarr      { height: 66px; }
 }
 
 /* ===== 404 PAGE (full mascot) ===== */

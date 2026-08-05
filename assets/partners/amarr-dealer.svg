@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" role="img" aria-label="Amarr Dealer">
+  <!-- Outer teal chevron badge -->
+  <polygon points="0,0 120,0 120,95 60,140 0,95" fill="#2a9d8f"/>
+  <!-- Inner dark panel -->
+  <polygon points="6,6 114,6 114,91 60,132 6,91" fill="#1a1f2e"/>
+  <!-- Amarr script text -->
+  <text x="60" y="62" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-style="italic" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="1">Amarr</text>
+  <!-- Thin rule -->
+  <line x1="20" y1="72" x2="100" y2="72" stroke="rgba(255,255,255,0.35)" stroke-width="0.75"/>
+  <!-- DEALER text -->
+  <text x="60" y="90" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="3.5">DEALER</text>
+</svg>
