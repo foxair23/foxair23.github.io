@@ -121,11 +121,11 @@
       <div class="contact-grid">
         <div class="scheduler-embed">
           <iframe
-            src="https://hq.castlegaragedoors.com/embed/scheduler?key=genie_bfb8f4511125445b9364b083f2d3a4b2"
+            src="https://hq.castlegaragedoors.com/embed/genie-scheduler?key=genie_bfb8f4511125445b9364b083f2d3a4b2"
             style="width:100%;border:none;min-height:900px"
             allow="payment"
             loading="lazy"
-            title="Book a Service Appointment"
+            title="Schedule your Genie installation"
           ></iframe>
         </div>
         <div class="contact-info-card">
@@ -193,7 +193,7 @@
   <script>
     window.addEventListener('message', function(e) {
       if (e.data && e.data.type === 'castle-scheduler-height') {
-        var f = document.querySelector('iframe[src*="hq.castlegaragedoors.com"]');
+        var f = document.querySelector('iframe[src*="genie-scheduler"]');
         if (f) f.style.minHeight = e.data.height + 'px';
       }
     });
