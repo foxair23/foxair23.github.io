@@ -4,5 +4,7 @@ Disallow: /answerforce
 Disallow: /answerforce/
 Disallow: /sfi
 Disallow: /sfi/
+Disallow: /genie
+Disallow: /genie/
 
 Sitemap: https://www.castlegaragedoors.com/sitemap.xml
