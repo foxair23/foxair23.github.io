@@ -7,4 +7,4 @@ Disallow: /sfi/
 Disallow: /opener
 Disallow: /opener/
 
-Sitemap: https://www.castlegarage.com/sitemap.xml
+Sitemap: https://castlegarage.com/sitemap.xml

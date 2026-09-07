@@ -3,7 +3,7 @@
 
 const PHONE = '(800) 576-1397';
 const PHONE_LINK = 'tel:8005761397';
-const SITE_URL = 'https://www.castlegarage.com';
+const SITE_URL = 'https://castlegarage.com';
 const LOGO_PATH = 'logo.png';
 
 function getDepth(filePath) {
