@@ -655,7 +655,7 @@ module.exports = [
       <li>Safety check of the complete door system</li>
       <li>Clean jobsite — we leave your garage cleaner than we found it</li>
     </ul>
-    <p>Questions about our warranties or compliance? Call <a href="${T.PHONE_LINK}">${T.PHONE}</a> or <a href="mailto:info@castlegaragedoors.com">email us</a>.</p>`,
+    <p>Questions about our warranties or compliance? Call <a href="${T.PHONE_LINK}">${T.PHONE}</a> or <a href="mailto:info@castlegarage.com">email us</a>.</p>`,
     faqs: [
       {q:'Does Castle Garage Doors have a valid contractor license?', a:'Yes. Castle holds CSLB License #1154002, classification C-61/D-28 (Door Systems). This license is active, bonded, and insured. You can verify it at cslb.ca.gov. We\'ve maintained continuous licensure for our entire history of operation.'},
       {q:'What warranty comes with garage door spring replacement?', a:'Springs carry a manufacturer warranty that varies by cycle rating: standard 10,000-cycle springs are warrantied for 1 year; high-cycle 25,000+ springs carry up to a 3-year warranty. Castle also provides a labor warranty — if the same issue recurs due to workmanship within the warranty period, we fix it free.'},

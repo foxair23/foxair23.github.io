@@ -227,7 +227,7 @@ function contactPage() {
       <div class="contact-info-card">
         <h3>Get In Touch</h3>
         <div class="contact-info-item">${T.svgIcons().clock}<p><strong>Call Us</strong><a href="${T.PHONE_LINK}">${T.PHONE}</a></p></div>
-        <div class="contact-info-item">${T.svgIcons().mail}<p><strong>Email</strong><a href="mailto:info@castlegaragedoors.com">info@castlegaragedoors.com</a></p></div>
+        <div class="contact-info-item">${T.svgIcons().mail}<p><strong>Email</strong><a href="mailto:info@castlegarage.com">info@castlegarage.com</a></p></div>
         <div class="contact-info-item">${T.svgIcons().map}<p><strong>Address</strong>1291 Simpson Way Suite D<br>Escondido, CA 92029</p></div>
         <div class="contact-info-item">${T.svgIcons().shield}<p><strong>License</strong>CSLB #1154002 (C-61/D-28)</p></div>
         <div class="contact-info-item">${T.svgIcons().clock}<p><strong>Hours</strong>Mon&ndash;Thu: 6:30 AM &ndash; 4:30 PM<br>Friday: 7:00 AM &ndash; 4:30 PM<br>Saturday: 8:00 AM &ndash; 12:00 PM<br>Sunday: Closed<br><em style="color:var(--color-red-light);">24/7 Emergency Service Available</em></p></div>
@@ -322,7 +322,7 @@ function privacyPage() {
       <li><strong>Correct</strong> inaccurate personal information we hold about you</li>
       <li><strong>Limit use</strong> of sensitive personal information</li>
     </ul>
-    <p>To exercise any of these rights, contact us at <a href="mailto:info@castlegaragedoors.com">info@castlegaragedoors.com</a> or call <a href="${T.PHONE_LINK}">${T.PHONE}</a>. We will respond within 45 days as required by law.</p>
+    <p>To exercise any of these rights, contact us at <a href="mailto:info@castlegarage.com">info@castlegarage.com</a> or call <a href="${T.PHONE_LINK}">${T.PHONE}</a>. We will respond within 45 days as required by law.</p>
 
     <h2>Data Retention</h2>
     <p>We retain your personal information only as long as necessary to fulfill the purposes described in this policy, or as required by law. Service records may be retained for warranty and legal compliance purposes.</p>
@@ -336,7 +336,7 @@ function privacyPage() {
     <h2>Contact Us</h2>
     <p>If you have questions about this privacy policy or wish to exercise your privacy rights, contact us:</p>
     <ul>
-      <li>Email: <a href="mailto:info@castlegaragedoors.com">info@castlegaragedoors.com</a></li>
+      <li>Email: <a href="mailto:info@castlegarage.com">info@castlegarage.com</a></li>
       <li>Phone: <a href="${T.PHONE_LINK}">${T.PHONE}</a></li>
       <li>Mail: Castle Garage Doors &amp; Gates, 1291 Simpson Way Suite D, Escondido, CA 92029</li>
     </ul>
@@ -360,7 +360,7 @@ function termsPage() {
     <p>Estimates are valid for 30 days unless otherwise stated. Final pricing may differ from estimates if additional work is discovered during service. We will obtain your approval before performing any work beyond the original estimate.</p>
 
     <h2>3. Warranties</h2>
-    <p>All parts and labor are warranted as described in your service invoice. Manufacturer warranties on parts (springs, openers, doors, etc.) are passed through to you. Warranty claims should be directed to us at <a href="${T.PHONE_LINK}">${T.PHONE}</a> or <a href="mailto:info@castlegaragedoors.com">info@castlegaragedoors.com</a>.</p>
+    <p>All parts and labor are warranted as described in your service invoice. Manufacturer warranties on parts (springs, openers, doors, etc.) are passed through to you. Warranty claims should be directed to us at <a href="${T.PHONE_LINK}">${T.PHONE}</a> or <a href="mailto:info@castlegarage.com">info@castlegarage.com</a>.</p>
 
     <h2>4. Website Use</h2>
     <p>The content on this Site is for general informational purposes only. While we strive to keep information current and accurate, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, or reliability of the Site content.</p>
@@ -384,7 +384,7 @@ function termsPage() {
     <h2>10. Contact</h2>
     <p>Questions about these terms? Contact us:</p>
     <ul>
-      <li>Email: <a href="mailto:info@castlegaragedoors.com">info@castlegaragedoors.com</a></li>
+      <li>Email: <a href="mailto:info@castlegarage.com">info@castlegarage.com</a></li>
       <li>Phone: <a href="${T.PHONE_LINK}">${T.PHONE}</a></li>
       <li>Mail: Castle Garage Doors &amp; Gates, 1291 Simpson Way Suite D, Escondido, CA 92029</li>
     </ul>
