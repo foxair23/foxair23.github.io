@@ -5,32 +5,32 @@
 
 @font-face {
   font-family: 'DM Sans';
-  src: url('assets/fonts/DMSans-VariableFont.ttf') format('truetype-variations'),
-       url('assets/fonts/DMSans-VariableFont.ttf') format('truetype');
+  src: url('assets/fonts/DMSans-VariableFont.woff2') format('woff2-variations'),
+       url('assets/fonts/DMSans-VariableFont.woff2') format('woff2');
   font-weight: 100 1000;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'DM Sans';
-  src: url('assets/fonts/DMSans-Italic-VariableFont.ttf') format('truetype-variations'),
-       url('assets/fonts/DMSans-Italic-VariableFont.ttf') format('truetype');
+  src: url('assets/fonts/DMSans-Italic-VariableFont.woff2') format('woff2-variations'),
+       url('assets/fonts/DMSans-Italic-VariableFont.woff2') format('woff2');
   font-weight: 100 1000;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: 'Source Sans 3';
-  src: url('assets/fonts/SourceSans3-VariableFont.ttf') format('truetype-variations'),
-       url('assets/fonts/SourceSans3-VariableFont.ttf') format('truetype');
+  src: url('assets/fonts/SourceSans3-VariableFont.woff2') format('woff2-variations'),
+       url('assets/fonts/SourceSans3-VariableFont.woff2') format('woff2');
   font-weight: 100 1000;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'Source Sans 3';
-  src: url('assets/fonts/SourceSans3-Italic-VariableFont.ttf') format('truetype-variations'),
-       url('assets/fonts/SourceSans3-Italic-VariableFont.ttf') format('truetype');
+  src: url('assets/fonts/SourceSans3-Italic-VariableFont.woff2') format('woff2-variations'),
+       url('assets/fonts/SourceSans3-Italic-VariableFont.woff2') format('woff2');
   font-weight: 100 1000;
   font-style: italic;
   font-display: swap;
