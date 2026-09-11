@@ -984,3 +984,21 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 }
 
 @keyframes spin { to { transform: rotate(360deg); } }
+
+/* ===== AEO: quick-answer lead + in-body assurance ===== */
+.hero-content .quick-answer {
+  max-width: 680px; margin-top: var(--space-4); padding: var(--space-3) var(--space-4);
+  border-left: 3px solid var(--color-red); background: rgba(255,255,255,0.07);
+  color: #FFF; font-size: var(--text-body); line-height: 1.6; text-shadow: none;
+}
+.assurance-note { max-width: 760px; }
+.assurance-note > p { font-size: var(--text-body); margin: 0; }
+.assurance-note a { color: var(--color-red); font-weight: 600; }
+.restoration-upsell {
+  margin-top: var(--space-6); padding: var(--space-6);
+  border: 1px solid var(--color-border); border-left: 4px solid var(--color-red);
+  border-radius: var(--radius); background: var(--color-bg-white);
+}
+.restoration-upsell strong { display: block; font-family: var(--font-display); font-size: var(--text-h4); margin-bottom: var(--space-2); }
+.restoration-upsell p { margin: 0; max-width: none; color: var(--color-text-secondary); }
+.restoration-upsell a { color: var(--color-red); font-weight: 600; white-space: nowrap; }
