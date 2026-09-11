@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Castle Restoration | Garage Door Rebuild with Lifetime Parts Protection</title>
-  <meta name="description" content="Keep the door you have. Castle Restoration rebuilds the moving hardware — springs, cables, rollers, bearings, drums and the torsion tube — with Lifetime Parts Protection. From $1,399.">
+  <meta name="description" content="Keep the door you have. Castle Restoration rebuilds the moving hardware — springs, cables, rollers, bearings, drums and the torsion tube — with Lifetime Parts Protection.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://castlegarage.com/restoration/">
   <meta property="og:title" content="Castle Restoration | Garage Door Rebuild with Lifetime Parts Protection">
-  <meta property="og:description" content="Keep the door you have. Castle Restoration rebuilds the moving hardware — springs, cables, rollers, bearings, drums and the torsion tube — with Lifetime Parts Protection. From $1,399.">
+  <meta property="og:description" content="Keep the door you have. Castle Restoration rebuilds the moving hardware — springs, cables, rollers, bearings, drums and the torsion tube — with Lifetime Parts Protection.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://castlegarage.com/restoration/">
   <meta property="og:site_name" content="Castle Garage Doors & Gates">
@@ -25,7 +25,7 @@
   {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","@id":"https://castlegarage.com/#business","name":"Castle Garage Doors & Gates","image":"https://castlegarage.com/logo.png","description":"Family-owned & operated garage door and gate service company serving San Diego to Riverside County since 1981. Authorized Home Depot Service Provider and Clopay Authorized Dealer.","url":"https://castlegarage.com","telephone":"(800) 576-1397","email":"info@castlegarage.com","address":{"@type":"PostalAddress","streetAddress":"1291 Simpson Way Suite D","addressLocality":"Escondido","addressRegion":"CA","postalCode":"92029","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":33.1192,"longitude":-117.0864},"areaServed":["San Diego, CA","Escondido, CA","Oceanside, CA","Carlsbad, CA","Encinitas, CA","Temecula, CA","Murrieta, CA","Fallbrook, CA","Corona, CA"],"foundingDate":"1981","priceRange":"$$","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.4","reviewCount":"210","bestRating":"5"},"hasCredential":{"@type":"EducationalOccupationalCredential","credentialCategory":"license","name":"CSLB Contractor License","recognizedBy":{"@type":"GovernmentOrganization","name":"California Contractors State License Board"},"identifier":"1154002","description":"C-61/D-28 — Door Systems"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"12:00"}],"sameAs":["https://www.facebook.com/castlegaragedoorscorp/","https://www.yelp.com/biz/castle-garage-doors-escondido","https://maps.app.goo.gl/T9DtTWjanN9Zgyte9"]}
   </script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Service","name":"Castle Restoration","description":"A mechanical restoration of an existing garage door. Castle replaces the torsion springs, rollers, lift cables, cable drums, bearings and bearing plates, and torsion tube, then sets the door balance and completes a full safety inspection. Includes Lifetime Parts Protection on all installed hardware.","provider":{"@id":"https://castlegarage.com/#business"},"areaServed":"San Diego to Riverside County, CA","serviceType":"Garage Door Restoration","offers":[{"@type":"Offer","name":"Restoration — Single Door","price":"1399","priceCurrency":"USD"},{"@type":"Offer","name":"Restoration — Double Door","price":"1699","priceCurrency":"USD"},{"@type":"Offer","name":"Restoration Premium — Single Door","price":"1799","priceCurrency":"USD"},{"@type":"Offer","name":"Restoration Premium — Double Door","price":"2099","priceCurrency":"USD"}]}
+  {"@context":"https://schema.org","@type":"Service","name":"Castle Restoration","description":"A mechanical restoration of an existing garage door. Castle replaces the torsion springs, rollers, lift cables, cable drums, bearings and bearing plates, and torsion tube, then sets the door balance and completes a full safety inspection. Includes Lifetime Parts Protection on all installed hardware.","provider":{"@id":"https://castlegarage.com/#business"},"areaServed":"San Diego to Riverside County, CA","serviceType":"Garage Door Restoration"}
   </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://castlegarage.com/"},{"@type":"ListItem","position":2,"name":"Castle Restoration","item":"https://castlegarage.com/restoration/"}]}
@@ -113,9 +113,10 @@
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: var(--space-8);
       margin-top: var(--space-10);
-      align-items: start;
     }
     .pkg {
+      display: flex;
+      flex-direction: column;
       background: #fff;
       border: 1px solid var(--color-border);
       border-radius: var(--radius-lg);
@@ -147,7 +148,8 @@
       border-bottom: 1px solid var(--color-border-light);
     }
     .pkg-spec { margin-bottom: var(--space-6); }
-    .pkg-spec:last-of-type { margin-bottom: 0; }
+    /* absorbs leftover height so both cards' buttons align */
+    .pkg-spec:last-of-type { margin-bottom: auto; }
     .pkg-spec-label {
       font-size: var(--text-small);
       font-weight: 600;
@@ -168,29 +170,6 @@
       color: var(--color-text-secondary);
       line-height: 1.5;
       margin-top: 2px;
-    }
-    .pkg-pricing {
-      margin-top: var(--space-8);
-      padding-top: var(--space-6);
-      border-top: 1px solid var(--color-border-light);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-6);
-    }
-    .pkg-price-label {
-      font-size: var(--text-small);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      color: var(--color-text-muted);
-      margin-bottom: var(--space-1);
-    }
-    .pkg-price {
-      font-family: var(--font-display, inherit);
-      font-size: 1.875rem;
-      font-weight: 700;
-      line-height: 1.1;
-      color: var(--color-primary);
     }
     .pkg .btn { margin-top: var(--space-8); width: 100%; text-align: center; justify-content: center; }
 
@@ -264,8 +243,6 @@
     @media (max-width: 767px) {
       .rest-hero { padding: calc(var(--header-height) + var(--space-8)) 0 var(--space-16); }
       .rest-section { padding: var(--space-16) 0; }
-      .pkg-pricing { grid-template-columns: 1fr 1fr; gap: var(--space-4); }
-      .pkg-price { font-size: 1.5rem; }
     }
   </style>
 </head>
@@ -410,19 +387,9 @@
           <div class="pkg-spec">
             <div class="pkg-spec-label">Annual maintenance</div>
             <div class="pkg-spec-value">Available</div>
-            <div class="pkg-spec-detail">$125 per visit &mdash; keeps your coverage active</div>
+            <div class="pkg-spec-detail">Keeps your coverage active</div>
           </div>
 
-          <div class="pkg-pricing">
-            <div>
-              <div class="pkg-price-label">Single</div>
-              <div class="pkg-price">$1,399</div>
-            </div>
-            <div>
-              <div class="pkg-price-label">Double</div>
-              <div class="pkg-price">$1,699</div>
-            </div>
-          </div>
           <a href="../contact.html" class="btn btn-secondary" data-track="schedule">Schedule Restoration</a>
         </div>
 
@@ -451,19 +418,8 @@
           <div class="pkg-spec">
             <div class="pkg-spec-label">Annual maintenance</div>
             <div class="pkg-spec-value">First 3 years included</div>
-            <div class="pkg-spec-detail">A $375 value</div>
           </div>
 
-          <div class="pkg-pricing">
-            <div>
-              <div class="pkg-price-label">Single</div>
-              <div class="pkg-price">$1,799</div>
-            </div>
-            <div>
-              <div class="pkg-price-label">Double</div>
-              <div class="pkg-price">$2,099</div>
-            </div>
-          </div>
           <a href="../contact.html" class="btn btn-primary" data-track="schedule">Schedule Restoration</a>
         </div>
       </div>
