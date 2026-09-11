@@ -41,117 +41,135 @@
   <style>
     .warranty-jump {
       position: sticky;
-      top: var(--header-height, 72px);
+      top: var(--header-height);
       z-index: 90;
       background: #fff;
-      border-bottom: 1px solid rgba(0,0,0,0.08);
-      padding: 0;
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
     }
     .warranty-jump-inner {
       display: flex;
       overflow-x: auto;
-      gap: 0;
+      gap: var(--space-1);
+      padding: var(--space-2) 0;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
     }
     .warranty-jump-inner::-webkit-scrollbar { display: none; }
     .warranty-jump-inner a {
       flex-shrink: 0;
-      padding: var(--space-3) var(--space-4);
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius);
       font-size: var(--text-small);
-      font-weight: 500;
-      color: var(--color-text-muted);
+      font-weight: 600;
+      color: var(--color-text-secondary);
       text-decoration: none;
       white-space: nowrap;
-      border-bottom: 2px solid transparent;
-      transition: color .15s, border-color .15s;
+      transition: color .15s, background-color .15s;
     }
     .warranty-jump-inner a:hover {
-      color: var(--color-primary);
-      border-bottom-color: var(--color-primary);
+      color: var(--color-red);
+      background: var(--color-surface);
     }
     .warranty-section {
-      padding: var(--space-14) 0;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
+      padding: var(--space-20) 0;
+      border-bottom: 1px solid var(--color-border-light);
+      scroll-margin-top: calc(var(--header-height) + 60px);
     }
     .warranty-section:last-of-type { border-bottom: none; }
     .warranty-section h2 {
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      margin-bottom: var(--space-5);
+      font-size: var(--text-h2);
+      margin-bottom: var(--space-4);
     }
     .warranty-section h3 {
-      font-size: var(--text-lg);
-      margin-top: var(--space-8);
-      margin-bottom: var(--space-3);
+      font-size: var(--text-h3);
+      margin-top: var(--space-10);
+      margin-bottom: var(--space-4);
     }
     .warranty-section p { margin-bottom: var(--space-4); }
+    .warranty-section ul { margin-bottom: var(--space-6); }
+    .warranty-section ul li { margin-bottom: var(--space-3); line-height: 1.65; }
+    .section-intro {
+      font-size: var(--text-body);
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-8) !important;
+    }
     .promise-cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: var(--space-5);
-      margin-top: var(--space-6);
+      gap: var(--space-6);
+      margin-top: var(--space-8);
     }
     .promise-card {
-      background: var(--color-surface, #fafaf8);
-      border: 1px solid rgba(0,0,0,0.07);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
       border-radius: var(--radius-lg);
-      padding: var(--space-6);
+      padding: var(--space-8);
     }
     .promise-card .promise-num {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--color-red);
+      color: #fff;
       font-size: var(--text-small);
       font-weight: 700;
-      color: var(--color-primary);
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      margin-bottom: var(--space-2);
+      margin-bottom: var(--space-4);
     }
     .promise-card strong {
       display: block;
-      font-size: var(--text-base);
-      margin-bottom: var(--space-2);
+      font-size: var(--text-body);
+      line-height: 1.35;
+      margin-bottom: var(--space-3);
     }
     .promise-card p {
-      font-size: var(--text-small);
-      color: var(--color-text-muted);
+      font-size: var(--text-body-sm);
+      color: var(--color-text-secondary);
+      line-height: 1.6;
       margin: 0;
     }
-    .coverage-table-wrap, .whatsnot-table-wrap {
+    .coverage-table-wrap {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
-      margin: var(--space-6) 0;
+      margin: var(--space-8) 0 var(--space-4);
       border-radius: var(--radius);
-      border: 1px solid rgba(0,0,0,0.09);
+      border: 1px solid var(--color-border);
     }
     .coverage-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: var(--text-small);
+      font-size: var(--text-body-sm);
     }
     .coverage-table th {
-      background: var(--color-dark, #1a1a1a);
+      background: var(--color-primary);
       color: #fff;
       text-align: left;
-      padding: var(--space-3) var(--space-4);
+      padding: var(--space-4);
       font-weight: 600;
       white-space: nowrap;
     }
     .coverage-table td {
-      padding: var(--space-3) var(--space-4);
-      border-bottom: 1px solid rgba(0,0,0,0.06);
+      padding: var(--space-4);
+      border-bottom: 1px solid var(--color-border-light);
       vertical-align: top;
+      line-height: 1.5;
     }
     .coverage-table tr:last-child td { border-bottom: none; }
-    .coverage-table tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+    .coverage-table tr:nth-child(even) td { background: var(--color-surface); }
     .coverage-note {
       font-size: var(--text-small);
-      color: var(--color-text-muted);
-      margin-top: var(--space-3);
+      color: var(--color-text-secondary);
+      margin-top: var(--space-4);
     }
     .claim-steps {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: var(--space-5);
-      margin-top: var(--space-6);
+      gap: var(--space-8);
+      margin-top: var(--space-8);
     }
     .claim-step {
       display: flex;
@@ -162,55 +180,60 @@
       flex-shrink: 0;
       width: 40px;
       height: 40px;
-      background: var(--color-primary);
+      background: var(--color-red);
       color: #fff;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 700;
-      font-size: var(--text-lg);
+      font-size: var(--text-body);
     }
-    .claim-step-body strong { display: block; margin-bottom: var(--space-1); }
-    .claim-step-body p { font-size: var(--text-small); color: var(--color-text-muted); margin: 0; }
+    .claim-step-body strong { display: block; font-size: var(--text-body); margin-bottom: var(--space-2); }
+    .claim-step-body p { font-size: var(--text-body-sm); color: var(--color-text-secondary); line-height: 1.6; margin: 0; }
     .fine-print-list {
       list-style: none;
       padding: 0;
-      margin: var(--space-5) 0 0;
+      margin: var(--space-8) 0 0;
+      border-top: 1px solid var(--color-border-light);
     }
     .fine-print-list li {
-      font-size: var(--text-small);
-      color: var(--color-text-muted);
-      padding: var(--space-3) 0;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
-      line-height: 1.6;
+      font-size: var(--text-body-sm);
+      color: var(--color-text-primary);
+      padding: var(--space-4) 0;
+      border-bottom: 1px solid var(--color-border-light);
+      line-height: 1.65;
+      margin: 0;
     }
-    .fine-print-list li:last-child { border-bottom: none; }
     .void-box {
-      border: 2px solid rgba(200,30,30,0.18);
+      border: 1px solid rgba(200,30,30,0.25);
+      background: rgba(200,30,30,0.03);
       border-radius: var(--radius-lg);
-      padding: var(--space-6);
-      margin-top: var(--space-6);
+      padding: var(--space-8);
+      margin-top: var(--space-10);
     }
-    .void-box h3 { margin-top: 0; color: #b91c1c; }
-    .void-item { margin-bottom: var(--space-5); }
-    .void-item:last-child { margin-bottom: 0; }
+    .void-box h3 { margin-top: 0; margin-bottom: var(--space-4); color: var(--color-red); }
+    .void-item { margin-top: var(--space-8); }
+    .void-item strong { display: block; font-size: var(--text-body); margin-bottom: var(--space-3); }
+    .void-item p { font-size: var(--text-body-sm); color: var(--color-text-secondary); line-height: 1.65; }
+    .void-item p:last-child { margin-bottom: 0; }
     .warranty-cta-inline {
-      background: var(--color-surface, #fafaf8);
-      border: 1px solid rgba(0,0,0,0.08);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
       border-radius: var(--radius-lg);
-      padding: var(--space-6) var(--space-8);
+      padding: var(--space-8);
       display: flex;
       flex-wrap: wrap;
-      gap: var(--space-4);
+      gap: var(--space-6);
       align-items: center;
       justify-content: space-between;
-      margin-top: var(--space-8);
+      margin-top: var(--space-12);
     }
-    .warranty-cta-inline p { margin: 0; font-weight: 500; }
-    .warranty-cta-inline .btn-group { flex-shrink: 0; }
+    .warranty-cta-inline p { margin: 0; font-weight: 600; font-size: var(--text-body); }
+    .warranty-cta-inline .btn-group { display: flex; flex-wrap: wrap; gap: 12px; flex-shrink: 0; }
     @media (max-width: 600px) {
       .warranty-cta-inline { flex-direction: column; align-items: flex-start; }
+      .warranty-section { padding: var(--space-16) 0; }
     }
   </style>
 </head>
@@ -291,11 +314,11 @@
         <a href="../index.html">Home</a><span class="sep">/</span> <span>Warranty</span>
       </nav>
       <span class="section-label">Our Warranty</span>
-      <h1 style="margin-top:var(--space-3);font-size:clamp(2rem,4vw,3rem);line-height:1.15;max-width:640px;">Our Warranty</h1>
-      <p style="margin-top:var(--space-4);font-size:var(--text-lg);color:var(--color-text-muted);max-width:580px;">We&rsquo;ve been putting our name on garage doors from San Diego to Riverside County since 1981. That&rsquo;s a long time to be wrong about something in front of your neighbors, so we&rsquo;ve never been interested in the kind of warranty that&rsquo;s written to get us out of things.</p>
-      <p style="margin-top:var(--space-4);font-size:var(--text-base);color:var(--color-text-muted);max-width:580px;">Here&rsquo;s how it actually works. If you hired Castle and paid Castle, we stand behind the work for a year &mdash; parts and labor, no arguing about which one failed. If you bought your door through Home Depot or another retailer and we installed it, the warranty is theirs, and we&rsquo;ll point you to the right person. And if you had us do a Castle Restoration, the moving hardware we installed is covered for as long as you own the home.</p>
-      <p style="margin-top:var(--space-4);font-size:var(--text-base);color:var(--color-text-muted);max-width:580px;">Everything below is the detail. If you&rsquo;d rather just call and ask, that works too.</p>
-      <div style="margin-top:var(--space-6);">
+      <h1 style="margin-top:var(--space-3);font-size:var(--text-hero);line-height:1.15;max-width:640px;">Our Warranty</h1>
+      <p style="margin-top:var(--space-6);font-size:var(--text-body);color:var(--color-text-secondary);max-width:620px;line-height:1.65;">We&rsquo;ve been putting our name on garage doors from San Diego to Riverside County since 1981. That&rsquo;s a long time to be wrong about something in front of your neighbors, so we&rsquo;ve never been interested in the kind of warranty that&rsquo;s written to get us out of things.</p>
+      <p style="margin-top:var(--space-4);font-size:var(--text-body-sm);color:var(--color-text-secondary);max-width:620px;line-height:1.65;">Here&rsquo;s how it actually works. If you hired Castle and paid Castle, we stand behind the work for a year &mdash; parts and labor, no arguing about which one failed. If you bought your door through Home Depot or another retailer and we installed it, the warranty is theirs, and we&rsquo;ll point you to the right person. And if you had us do a Castle Restoration, the moving hardware we installed is covered for as long as you own the home.</p>
+      <p style="margin-top:var(--space-4);font-size:var(--text-body-sm);color:var(--color-text-secondary);max-width:620px;line-height:1.65;">Everything below is the detail. If you&rsquo;d rather just call and ask, that works too.</p>
+      <div style="margin-top:var(--space-8);">
         <a href="tel:+18005761397" class="btn btn-primary">Call (800) 576-1397</a>
       </div>
     </div>
@@ -554,7 +577,7 @@
       <!-- The Castle Promise -->
       <section class="warranty-section" id="castle-promise">
         <h2>The Castle Promise</h2>
-        <p style="color:var(--color-text-muted);">A warranty covers parts. These cover everything else.</p>
+        <p class="section-intro">A warranty covers parts. These cover everything else.</p>
         <div class="promise-cards">
           <div class="promise-card">
             <div class="promise-num">1</div>
@@ -587,7 +610,7 @@
       <!-- Fine print -->
       <section class="warranty-section" id="fine-print">
         <h2>The Fine Print</h2>
-        <p style="color:var(--color-text-muted);">Small type, but plain English.</p>
+        <p class="section-intro">Small type, but plain English.</p>
         <ul class="fine-print-list">
           <li>All coverage begins on the date the work was completed and requires that the invoice was paid in full.</li>
           <li>Your invoice is the controlling document. If your invoice states different terms than this page, your invoice governs.</li>
@@ -604,8 +627,8 @@
     </div>
   </main>
 
-  <section class="cta-dark">
-    <div class="container cta-dark-inner">
+  <section class="cta-banner-dark">
+    <div class="container">
       <div class="cta-dark-copy">
         <span class="section-label">24/7 Rapid Response</span>
         <h2>Need Help? Our Knight Is On The Way.</h2>
