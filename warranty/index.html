@@ -93,11 +93,6 @@
     /* Prose tier: one size, one color, one measure shared with lists and tables */
     .warranty-section p,
     .warranty-section ul li,
-    .fine-print-list li {
-      font-size: var(--text-body);
-      color: var(--color-text-primary);
-      max-width: none;
-    }
     .warranty-section p { margin-bottom: var(--space-4); }
     .warranty-section ul { margin-bottom: var(--space-6); list-style: disc; padding-left: var(--space-6); }
     .warranty-section ul li { margin-bottom: var(--space-3); line-height: 1.65; }
@@ -203,31 +198,6 @@
     }
     .claim-step-body strong { display: block; font-size: var(--text-body); margin-bottom: var(--space-2); }
     .claim-step-body p { font-size: var(--text-body-sm); color: var(--color-text-secondary); line-height: 1.6; margin: 0; }
-    /* dividers separate these rows, so no bullets (out-specifies .warranty-section ul) */
-    .warranty-section .fine-print-list {
-      list-style: none;
-      padding: 0;
-      margin: var(--space-6) 0 0;
-      border-top: 1px solid var(--color-border-light);
-    }
-    .fine-print-list li {
-      padding: var(--space-4) 0;
-      border-bottom: 1px solid var(--color-border-light);
-      line-height: 1.65;
-      margin: 0;
-    }
-    .void-box {
-      border: 1px solid rgba(200,30,30,0.25);
-      background: rgba(200,30,30,0.03);
-      border-radius: var(--radius-lg);
-      padding: var(--space-8);
-      margin-top: var(--space-8);
-    }
-    .void-box h3 { margin-top: 0; margin-bottom: var(--space-4); color: var(--color-red); }
-    .void-item { margin-top: var(--space-8); }
-    .void-item strong { display: block; font-size: var(--text-body); margin-bottom: var(--space-3); }
-    .void-item p { line-height: 1.65; }
-    .void-item p:last-child { margin-bottom: 0; }
     .warranty-cta-inline {
       background: var(--color-surface);
       border: 1px solid var(--color-border);
@@ -242,6 +212,12 @@
     }
     .warranty-cta-inline p { margin: 0; font-weight: 600; font-size: var(--text-body); }
     .warranty-cta-inline .btn-group { display: flex; flex-wrap: wrap; gap: 12px; flex-shrink: 0; }
+    .claim-notice { margin-top: var(--space-6); }
+    /* Terms: a secondary layer under the plain-English warranty above */
+    .warranty-terms .section-intro { color: var(--color-text-secondary); }
+    .warranty-terms p { font-size: var(--text-body-sm); max-width: 72ch; }
+    .warranty-terms h3 { font-size: var(--text-h4); margin-top: var(--space-8); margin-bottom: var(--space-3); }
+    .warranty-terms .coverage-note { margin-top: var(--space-8); }
     @media (max-width: 600px) {
       .warranty-cta-inline { flex-direction: column; align-items: flex-start; }
       .warranty-section { padding: var(--space-8) 0; }
@@ -346,7 +322,7 @@
       <a href="#make-a-claim">Make a Claim</a>
       <a href="#castle-promise">The Promise</a>
       <a href="#faq">FAQ</a>
-      <a href="#fine-print">Fine Print</a>
+      <a href="#warranty-terms">Terms</a>
     </div>
   </nav>
 
@@ -534,22 +510,15 @@
           <li>Labor outside the labor warranty period on a lifetime parts claim</li>
           <li>Lost income, property damage, or other consequential losses</li>
         </ul>
-        <p>Our warranty covers repair or replacement of the covered part. It doesn&rsquo;t include refunds. If something isn&rsquo;t right, our job is to make the system right.</p>
+        <p>Our warranty covers repair or replacement of the covered part. Where repair or replacement isn&rsquo;t practical, we may refund what you paid us for it instead. Either way, our job is to make the system right.</p>
 
-        <div class="void-box">
-          <h3>Two Things That Void Your Warranty Completely</h3>
-          <p>These aren&rsquo;t gaps in coverage. These end it.</p>
-          <div class="void-item">
-            <strong>1. Someone other than Castle works on the door after we do.</strong>
-            <p>Once another company opens up the system &mdash; adjusts spring tension, swaps a roller, re-terminates a cable, reprograms the opener &mdash; we no longer know what&rsquo;s on your door or who set it. A torsion system is under enough tension to kill someone, and we can&rsquo;t warranty work we can&rsquo;t verify. If another company touches the door after us, our warranty on that door ends.</p>
-            <p>This includes handy neighbors and well-meaning relatives.</p>
-          </div>
-          <div class="void-item">
-            <strong>2. The Castle service sticker is removed.</strong>
-            <p>We leave a sticker on the door or the opener with your job information on it. That sticker is how we identify the work, the date, and the parts that went on your door. If it&rsquo;s been removed, defaced, or painted over, we have no way to confirm what we&rsquo;re looking at, and coverage on that door is void.</p>
-            <p>If the sticker comes off accidentally or gets damaged, call us before you need service. We&rsquo;ll replace it at no charge.</p>
-          </div>
-        </div>
+        <h3>If someone else works on the door</h3>
+        <p>If another company adjusts, repairs, or modifies something we installed, we aren&rsquo;t responsible for failures their work caused or contributed to. We also may not be able to cover a claim if their work makes it impossible for us to tell what failed and why.</p>
+        <p>That isn&rsquo;t us looking for an exit. A torsion system is under enough tension to kill someone, and we can&rsquo;t stand behind a setting we didn&rsquo;t set.</p>
+        <p>Unrelated work doesn&rsquo;t cancel your coverage. If another contractor reprograms your opener, your springs are still covered.</p>
+        <h3>How we find your job</h3>
+        <p>We leave a service sticker on the door or opener with your job information on it. It&rsquo;s the fastest way for us to identify the work we did, but it isn&rsquo;t the only way.</p>
+        <p>If the sticker is gone, damaged, or painted over, that alone doesn&rsquo;t cost you your coverage. We can look up your job by name, address, or invoice number. If we can&rsquo;t locate the record, we may ask you for proof of purchase or other documentation.</p>
       </section>
 
       <!-- Make a claim -->
@@ -578,6 +547,7 @@
             </div>
           </div>
         </div>
+        <p class="claim-notice"><strong>Call as soon as you notice something.</strong> Report a problem within 30 days of first noticing it. Waiting makes it harder for us to tell what happened, and it can affect your coverage.</p>
         <div class="warranty-cta-inline">
           <p>Ready to start a claim or have a question?</p>
           <div class="btn-group">
@@ -631,20 +601,73 @@
         </div>
       </section>
 
-      <section class="warranty-section" id="fine-print">
-        <h2>The Fine Print</h2>
-        <p class="section-intro">Small type, but plain English.</p>
-        <ul class="fine-print-list">
-          <li>All coverage begins on the date the work was completed and requires that the invoice was paid in full.</li>
-          <li>Your invoice is the controlling document. If your invoice states different terms than this page, your invoice governs.</li>
-          <li>Coverage applies only at the address where the work was performed.</li>
-          <li>Coverage is void if any party other than Castle performs work on the door, gate, or opener after our service, or if the Castle service sticker is removed, defaced, or painted over.</li>
-          <li>&ldquo;Lifetime&rdquo; means for as long as the original purchaser owns the property where the work was performed. Coverage may be transferred once to a subsequent owner of the same property for a one-time fee. It has no cash value.</li>
-          <li>Castle Garage Doors &amp; Gates reserves the right to update these terms.</li>
-          <li>Nothing on this page limits any rights you have under California law.</li>
-          <li>Questions about your specific coverage: <a href="tel:+18005761397">(800) 576-1397</a> / <a href="mailto:info@castlegarage.com">info@castlegarage.com</a></li>
-        </ul>
-        <p class="coverage-note">Last updated: September 11, 2026</p>
+      <section class="warranty-section warranty-terms" id="warranty-terms">
+        <h2>Warranty Terms &amp; Conditions</h2>
+        <p class="section-intro">The legal details behind the warranty above.</p>
+        <p>These Warranty Terms &amp; Conditions apply to warranties provided by Castle Garage Inc. d/b/a Castle Garage Doors &amp; Gates (&ldquo;Castle&rdquo;). They supplement the warranty descriptions above and the warranty information contained in Castle estimates, agreements, invoices, and other written customer documentation.</p>
+        <h3>1. Which Warranty Applies</h3>
+        <p>The warranty applicable to your work is the warranty identified on your Castle invoice, estimate, agreement, or other applicable written documentation.</p>
+        <p>If the specific written terms applicable to your project differ from these general terms, the project-specific written terms control.</p>
+        <p>Products or services purchased through The Home Depot or another retailer, dealer, manufacturer, home warranty company, property manager, contractor, or other third party are subject to the warranty program associated with that purchase. Castle&rsquo;s performance of installation or service work for a third party does not create a separate Castle direct-purchase warranty unless Castle expressly provides one in writing.</p>
+        <h3>2. Residential and Commercial Work</h3>
+        <p>Unless expressly stated otherwise in writing, the consumer warranty descriptions on this page apply to qualifying residential services purchased directly from Castle.</p>
+        <p>Commercial, multifamily, HOA, property-management, builder, and other non-consumer work may be subject to different warranty terms stated in the applicable estimate, agreement, invoice, retailer program, manufacturer program, or other written documentation.</p>
+        <h3>3. When Coverage Begins</h3>
+        <p>Unless expressly stated otherwise in writing, Castle warranty periods begin on the date the applicable work is substantially completed and apply only after the applicable invoice has been paid in full.</p>
+        <p>Coverage applies to the products, components, and workmanship specifically included in the applicable transaction and at the property where the work was performed.</p>
+        <h3>4. Warranty Remedy</h3>
+        <p>For a valid Castle warranty claim, Castle will determine, in its reasonable professional judgment, whether adjustment, repair, replacement, or, where appropriate, refund of the amount originally paid to Castle for the particular covered product, component, or service giving rise to the claim is the appropriate remedy.</p>
+        <p>A refund remedy does not entitle the customer to a refund of amounts paid for other products, components, or services that are not the subject of the covered claim.</p>
+        <p>Unless otherwise required by law, Castle&rsquo;s obligation under its warranty is limited to the remedy selected by Castle for the covered condition. Warranty coverage does not create a right to a particular remedy or to replacement of an entire system when repair, adjustment, component replacement, or refund is an appropriate remedy.</p>
+        <p>Repair or replacement of a covered component does not extend or restart the original warranty period unless Castle expressly agrees otherwise in writing.</p>
+        <p>If an identical product, component, model, color, finish, or part is no longer reasonably available, Castle may use a reasonably comparable replacement.</p>
+        <h3>5. Manufacturer Warranties</h3>
+        <p>Products supplied or installed by Castle may carry separate manufacturer warranties. Manufacturer warranty coverage is determined by the manufacturer&rsquo;s applicable terms and claim procedures.</p>
+        <p>Castle cannot guarantee manufacturer approval of a claim, availability of replacement products or parts, processing or shipping times, or continued availability of any particular model, color, finish, component, or product line.</p>
+        <p>If a manufacturer provides a replacement product or part but does not cover labor, shipping, freight, diagnosis, travel, removal, or installation, those costs are the customer&rsquo;s responsibility unless independently covered by an applicable Castle warranty.</p>
+        <h3>6. Conditions Not Covered</h3>
+        <p>In addition to the exclusions described above, Castle warranties do not cover a failure or condition caused by or materially resulting from accident, impact, misuse, abuse, neglect, vandalism, improper operation, lack of required maintenance, environmental conditions, power or electrical problems, water, fire, pests, structural movement or building conditions, or products or components Castle did not supply or install.</p>
+        <p>Coverage also does not extend to failures or damage caused by improper cleaning, painting, coating, pressure washing, chemical exposure, corrosive environments or substances, salt or marine exposure, abrasive cleaners, or failure to follow applicable manufacturer care, use, or maintenance instructions.</p>
+        <p>Castle is not responsible for failures or damage caused by or materially affected by work, adjustment, modification, repair, or installation performed by anyone other than Castle. Castle may deny warranty coverage where third-party work caused or contributed to the claimed condition or prevents Castle from reasonably determining whether the claimed failure resulted from covered Castle work.</p>
+        <p>Third-party work does not automatically eliminate otherwise applicable coverage.</p>
+        <p>Continued operation of equipment after an unsafe, damaged, or abnormal condition becomes known or reasonably apparent may also exclude resulting damage from coverage.</p>
+        <h3>7. Prompt Notice and Opportunity to Inspect</h3>
+        <p>Warranty claims must be reported to Castle within thirty (30) days after the customer discovers, or reasonably should have discovered, the claimed defect or condition and must also be submitted within the applicable warranty period.</p>
+        <p>Failure to report a claim within thirty (30) days may result in denial or limitation of warranty coverage to the extent permitted by applicable law, particularly where the delay prevents Castle from reasonably inspecting or diagnosing the condition, determining its cause, verifying coverage, or preventing additional damage.</p>
+        <p>Except where immediate action is reasonably necessary to protect persons or property, the customer must provide Castle a reasonable opportunity to inspect an alleged warranty condition before the affected product or component is removed, discarded, materially altered, or repaired by another service provider.</p>
+        <p>Failure to provide Castle a reasonable opportunity to inspect does not automatically eliminate otherwise applicable coverage; however, Castle may deny or limit a claim where removal, alteration, disposal, or third-party repair prevents Castle from reasonably determining the cause of the claimed failure or verifying warranty coverage.</p>
+        <p>Customers should discontinue operation of equipment that appears unsafe, damaged, or abnormal and take reasonable steps to prevent additional damage.</p>
+        <h3>8. Unauthorized Third-Party Costs</h3>
+        <p>Castle does not reimburse charges incurred for inspection, diagnosis, service, repair, replacement, removal, installation, emergency service, or other work performed by another service provider unless Castle expressly authorized those charges in writing in advance, except where otherwise required by applicable law.</p>
+        <h3>9. Inspection and Non-Warranty Service</h3>
+        <p>Castle may inspect or diagnose equipment before determining whether a reported condition is covered by warranty.</p>
+        <p>If inspection determines that the condition is not covered, the visit and any requested repair may be subject to Castle&rsquo;s then-current service, diagnostic, labor, and parts charges.</p>
+        <p>Whenever reasonably practicable, Castle will advise the customer of applicable charges before performing additional non-warranty repairs.</p>
+        <h3>10. Proof of Coverage</h3>
+        <p>Castle may require information reasonably necessary to identify the original work and applicable warranty, including the customer&rsquo;s name, service address, invoice or job number, approximate service date, photographs, video, or proof of purchase.</p>
+        <p>Castle service stickers help identify previously performed work, but removal, damage, or absence of a Castle service sticker does not by itself eliminate warranty coverage where Castle can reasonably verify the original work through its records or other proof of purchase.</p>
+        <p>Castle may require additional documentation if the original work cannot otherwise be verified.</p>
+        <h3>11. Access, Safety and Scheduling</h3>
+        <p>The customer must provide safe and reasonable access to the equipment and work area for warranty inspection and service.</p>
+        <p>Castle is not required to perform work where conditions are unsafe, inaccessible, unsanitary, obstructed, or otherwise unsuitable for service.</p>
+        <p>Warranty service is subject to reasonable scheduling and technician availability. Emergency, expedited, weekend, holiday, or after-hours service is not included unless expressly provided by the applicable written warranty.</p>
+        <h3>12. Secondary Damage and Limitation of Warranty Liability</h3>
+        <p>Castle warranties cover only the products, components, services, and workmanship expressly included in the applicable warranty and the warranty remedies described in these terms.</p>
+        <p>To the fullest extent permitted by applicable law, Castle is not responsible under its warranty for special, secondary, incidental, indirect, consequential, exemplary, or other related costs, losses, or damages resulting from the failure or malfunction of a covered or non-covered product, component, or system.</p>
+        <p>Examples include, without limitation, loss of use; inability to access or secure a garage, gate, vehicle, residence, or other property; alternative access or transportation; towing or storage costs; lost time; lost income; business interruption; utility costs; additional living expenses; theft or loss of contents; and damage to vehicles, personal property, garage door sections or panels, gates, structures, finishes, or other property or components that are not themselves independently covered by the applicable Castle warranty.</p>
+        <p>The fact that Castle repairs, replaces, adjusts, or refunds a covered product, component, or service under warranty does not make resulting secondary damage or other consequential loss part of the warranty claim.</p>
+        <p>This limitation does not eliminate otherwise applicable warranty coverage for another Castle-covered component that independently experiences a covered defect.</p>
+        <p>Castle is also not responsible under its warranty for secondary or consequential losses resulting from reasonable delay in diagnosis, repair, or replacement caused by product or parts availability, manufacturer delays, supply-chain disruptions, weather, labor shortages, scheduling constraints, or other circumstances outside Castle&rsquo;s reasonable control.</p>
+        <p>Customers are responsible for taking reasonable steps to prevent or reduce additional damage after an unsafe, damaged, or abnormal condition becomes known or reasonably apparent. Castle is not responsible under its warranty for additional damage caused or materially increased by unreasonable delay in reporting a known problem or continued operation of equipment after such a condition becomes reasonably apparent.</p>
+        <p>Nothing in these terms is intended to exclude, restrict, or modify any warranty, liability, right, remedy, or consumer protection that cannot lawfully be excluded, restricted, or modified under applicable California or federal law.</p>
+        <h3>13. Castle Restoration</h3>
+        <p>Castle Restoration and Restoration Premium coverage is subject to the specific eligibility, covered-component, labor-period, maintenance, transfer, and other requirements described in the Castle Restoration warranty above and in the documentation applicable to the customer&rsquo;s purchase.</p>
+        <p>&ldquo;Lifetime&rdquo; means the period described in the Castle Restoration warranty above: for as long as the original purchaser owns the property where the work was performed, subject to the annual maintenance requirement, and transferable once to a subsequent owner of the same property for a one-time transfer fee. It does not refer to the service life of any product or component.</p>
+        <h3>14. Written Terms</h3>
+        <p>These terms, together with the applicable estimate, agreement, invoice, warranty description, and other written terms applicable to the transaction, constitute Castle&rsquo;s written warranty for the covered work.</p>
+        <p>Statements by Castle employees or representatives do not expand or modify a written warranty unless the modification is provided or confirmed by Castle in writing in the applicable estimate, agreement, invoice, or other written warranty documentation.</p>
+        <p>Castle may update these general Warranty Terms &amp; Conditions from time to time. Updates apply prospectively and do not reduce warranty coverage previously provided under the written terms applicable to a completed transaction.</p>
+        <p class="coverage-note"><strong>Last updated: September 11, 2026</strong></p>
       </section>
 
     </div>
