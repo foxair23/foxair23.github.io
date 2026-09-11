@@ -42,7 +42,8 @@
     .rest-hero {
       background: var(--color-primary);
       color: #fff;
-      padding: var(--space-20) 0;
+      /* header is position:fixed — clear it before the visual padding */
+      padding: calc(var(--header-height) + var(--space-12)) 0 var(--space-20);
       position: relative;
       overflow: hidden;
     }
@@ -261,7 +262,8 @@
     .not-covered strong { color: var(--color-text-primary); }
 
     @media (max-width: 767px) {
-      .rest-hero, .rest-section { padding: var(--space-16) 0; }
+      .rest-hero { padding: calc(var(--header-height) + var(--space-8)) 0 var(--space-16); }
+      .rest-section { padding: var(--space-16) 0; }
       .pkg-pricing { grid-template-columns: 1fr 1fr; gap: var(--space-4); }
       .pkg-price { font-size: 1.5rem; }
     }

@@ -353,6 +353,10 @@ p { max-width: 680px; }
 .breadcrumb a { color: rgba(255,255,255,0.6); transition: color 0.2s; }
 .breadcrumb a:hover { color: var(--color-red); }
 .breadcrumb .sep { margin: 0 4px; }
+/* .breadcrumb is white for dark .hero-interior heroes; page-top heroes are light */
+.page-top:not(.hero-interior) .breadcrumb,
+.page-top:not(.hero-interior) .breadcrumb a { color: var(--color-text-secondary); }
+.page-top:not(.hero-interior) .breadcrumb a:hover { color: var(--color-red); }
 
 /* ===== TRUST BAR ===== */
 .trust-bar {
