@@ -73,33 +73,43 @@
       background: var(--color-surface);
     }
     .warranty-section {
-      padding: var(--space-20) 0;
+      padding: var(--space-10) 0;
       border-bottom: 1px solid var(--color-border-light);
       scroll-margin-top: calc(var(--header-height) + 60px);
     }
     .warranty-section:last-of-type { border-bottom: none; }
+    .warranty-section > *:last-child { margin-bottom: 0; }
     .warranty-section h2 {
       font-size: var(--text-h2);
       margin-bottom: var(--space-4);
     }
     .warranty-section h3 {
       font-size: var(--text-h3);
-      margin-top: var(--space-10);
+      margin-top: var(--space-8);
       margin-bottom: var(--space-4);
     }
+    /* Prose tier: one size, one color, one measure shared with lists and tables */
+    .warranty-section p,
+    .warranty-section ul li,
+    .fine-print-list li {
+      font-size: var(--text-body);
+      color: var(--color-text-primary);
+      max-width: none;
+    }
     .warranty-section p { margin-bottom: var(--space-4); }
-    .warranty-section ul { margin-bottom: var(--space-6); }
+    .warranty-section ul { margin-bottom: var(--space-6); list-style: disc; padding-left: var(--space-6); }
     .warranty-section ul li { margin-bottom: var(--space-3); line-height: 1.65; }
+    .warranty-section ul li:last-child { margin-bottom: 0; }
     .section-intro {
       font-size: var(--text-body);
       color: var(--color-text-secondary);
-      margin-bottom: var(--space-8) !important;
+      margin-bottom: var(--space-6) !important;
     }
     .promise-cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: var(--space-6);
-      margin-top: var(--space-8);
+      margin-top: var(--space-6);
     }
     .promise-card {
       background: var(--color-surface);
@@ -135,7 +145,7 @@
     .coverage-table-wrap {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
-      margin: var(--space-8) 0 var(--space-4);
+      margin: var(--space-6) 0 var(--space-4);
       border-radius: var(--radius);
       border: 1px solid var(--color-border);
     }
@@ -161,7 +171,7 @@
     .coverage-table tr:last-child td { border-bottom: none; }
     .coverage-table tr:nth-child(even) td { background: var(--color-surface); }
     .coverage-note {
-      font-size: var(--text-small);
+      font-size: var(--text-body-sm);
       color: var(--color-text-secondary);
       margin-top: var(--space-4);
     }
@@ -169,7 +179,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: var(--space-8);
-      margin-top: var(--space-8);
+      margin-top: var(--space-6);
     }
     .claim-step {
       display: flex;
@@ -191,15 +201,14 @@
     }
     .claim-step-body strong { display: block; font-size: var(--text-body); margin-bottom: var(--space-2); }
     .claim-step-body p { font-size: var(--text-body-sm); color: var(--color-text-secondary); line-height: 1.6; margin: 0; }
-    .fine-print-list {
+    /* dividers separate these rows, so no bullets (out-specifies .warranty-section ul) */
+    .warranty-section .fine-print-list {
       list-style: none;
       padding: 0;
-      margin: var(--space-8) 0 0;
+      margin: var(--space-6) 0 0;
       border-top: 1px solid var(--color-border-light);
     }
     .fine-print-list li {
-      font-size: var(--text-body-sm);
-      color: var(--color-text-primary);
       padding: var(--space-4) 0;
       border-bottom: 1px solid var(--color-border-light);
       line-height: 1.65;
@@ -210,12 +219,12 @@
       background: rgba(200,30,30,0.03);
       border-radius: var(--radius-lg);
       padding: var(--space-8);
-      margin-top: var(--space-10);
+      margin-top: var(--space-8);
     }
     .void-box h3 { margin-top: 0; margin-bottom: var(--space-4); color: var(--color-red); }
     .void-item { margin-top: var(--space-8); }
     .void-item strong { display: block; font-size: var(--text-body); margin-bottom: var(--space-3); }
-    .void-item p { font-size: var(--text-body-sm); color: var(--color-text-secondary); line-height: 1.65; }
+    .void-item p { line-height: 1.65; }
     .void-item p:last-child { margin-bottom: 0; }
     .warranty-cta-inline {
       background: var(--color-surface);
@@ -227,13 +236,13 @@
       gap: var(--space-6);
       align-items: center;
       justify-content: space-between;
-      margin-top: var(--space-12);
+      margin-top: var(--space-8);
     }
     .warranty-cta-inline p { margin: 0; font-weight: 600; font-size: var(--text-body); }
     .warranty-cta-inline .btn-group { display: flex; flex-wrap: wrap; gap: 12px; flex-shrink: 0; }
     @media (max-width: 600px) {
       .warranty-cta-inline { flex-direction: column; align-items: flex-start; }
-      .warranty-section { padding: var(--space-16) 0; }
+      .warranty-section { padding: var(--space-8) 0; }
     }
   </style>
 </head>
