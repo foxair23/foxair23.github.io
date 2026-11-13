@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Check Your Job Status | Castle Garage Doors &amp; Gates</title>
   <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://hq.castlegarage.com">
   <link rel="preload" href="../assets/fonts/DMSans-VariableFont.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../assets/fonts/SourceSans3-VariableFont.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../styles.css">
@@ -33,13 +34,8 @@
       font-size: var(--text-3xl, 2rem);
       margin-bottom: var(--space-2);
     }
-    .status-placeholder {
-      min-height: 420px; display: flex; flex-direction: column;
-      align-items: center; justify-content: center; text-align: center;
-      gap: var(--space-4); padding: var(--space-8);
-      background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg);
-    }
-    .status-placeholder p { max-width: 46ch; color: var(--color-text-secondary); margin: 0; }
+    /* reserve space while the loader paints; the widget sizes itself after */
+    #castle-status { min-height: 900px; }
     .lp-top .container p {
       color: rgba(255,255,255,0.7);
       font-size: var(--text-lg, 1.125rem);
@@ -130,15 +126,8 @@
     <div class="container">
       <div class="contact-grid">
         <div class="scheduler-embed">
-          <!-- Job-status embed goes here. Replace this placeholder with the iframe:
-               <iframe src="https://hq.castlegarage.com/embed/..." style="width:100%;border:none;min-height:900px"
-                       allow="payment" loading="lazy" title="Check your job status"></iframe>
-               The resize listener at the bottom of this file already matches hq.castlegarage.com. -->
-          <div class="status-placeholder">
-            <h2>Job status lookup is on the way</h2>
-            <p>We&rsquo;re setting this up. In the meantime, call us and we&rsquo;ll tell you exactly where your job stands &mdash; no hold music, no ticket number required.</p>
-            <a href="tel:+18005761397" class="btn btn-primary">Call (800) 576-1397</a>
-          </div>
+          <div id="castle-status"></div>
+          <script src="https://hq.castlegarage.com/embed/status/loader.js"></script>
         </div>
         <div class="contact-info-card">
           <h3>Get In Touch</h3>
