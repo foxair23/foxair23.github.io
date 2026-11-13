@@ -6,5 +6,7 @@ Disallow: /sfi
 Disallow: /sfi/
 Disallow: /opener
 Disallow: /opener/
+Disallow: /status
+Disallow: /status/
 
 Sitemap: https://castlegarage.com/sitemap.xml
