@@ -1,7 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /answerforce
-Disallow: /answerforce/
 Disallow: /sfi
 Disallow: /sfi/
 Disallow: /opener
